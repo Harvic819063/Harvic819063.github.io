@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="theme-color" content="#050505">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" as="image" href="images/TechHub_logo.png">
+    <title>macbook neo</title>
+    <link rel="icon" type="image/png" href="images/favicon/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      body {
+        background-color: #050505;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+      }
+
+      article {
+        background-color: #050505;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #f8f9fa;
+        font-size: 25px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      h2 {
+        color: #FF7B00;
+        font-size: 1.8em;
+        margin-top: 40px;
+        padding-bottom: 10px;
+      }
+
+      p {
+        color: #f8f9fa;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+      }
+
+      table {
+        color: #FFFFFF;
+      }
+
+      .highlight {
+        background-color: #f1c40f;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-weight: bold;
+      }
+
+      blockquote {
+        font-size: 1.3em;
+        font-style: italic;
+        color: #555;
+        margin: 30px 0;
+        padding-left: 20px;
+        background-color: #050505;
+        padding: 15px 20px;
+      }
+
+      ul {
+        color: #f8f9fa;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      .author-note {
+        font-size: 0.9em;
+        color: #7f8c8d;
+        text-align: right;
+        margin-top: 50px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #FFFFFF !important;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      .home-btn {
+        background-color: #2b2d31;
+        color: #FF7B00;
+        border: 2px solid #FF7B00;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .auth-link {
+        flex: 1;
+      }
+
+      .auth-btn {
+        background-color: #2b2d31;
+        color: #f8f9fa;
+        border: 2px solid #FF7B00;
+        padding: 8px 20px;
+        font-size: 14px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .auth-btn.user {
+        border-radius: 50px;
+      }
+
+      .user-icon {
+        color: #FF7B00;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease;
+        filter: brightness(1.2);
+      }
+
+      .logo-container {
+        font-size: 90px;
+        font-weight: bold;
+        letter-spacing: -5px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-tech {
+        color: #FFFFFF;
+      }
+
+      .logo-hub {
+        background-color: #FF7B00;
+        color: #050505;
+        margin-left: 5px;
+        padding: 2px 15px;
+        border-radius: 36px;
+      }
+
+      .search-section {
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar-container {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .search-input {
+        flex: 1;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 24px;
+        border: 2px solid #FF7B00;
+        background-color: #2b2d31;
+        color: white;
+        outline: none;
+      }
+
+      .search-btn {
+        background-color: #FF7B00;
+        color: #000000;
+        border: none;
+        padding: 0 25px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .tag-buttons-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 12px;
+      }
+
+      .tag-btn {
+        background-color: #2b2d31;
+        color: #f8f9fa;
+        border: 2px solid #FF7B00;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .section-title {
+        font-size: 24px;
+        text-align: center;
+        padding: 7.5px;
+        display: flex;
+        justify-content: center;
+        border-left: 3px solid #FF7B00;
+        border-bottom: 3px solid #FF7B00;
+        margin-top: 30px;
+        border-radius: 24px;
+      }
+
+      .section-title strong {
+        color: #FFFFFF;
+      }
+
+      #noResults {
+        display: none;
+        color: #aaa;
+        margin-top: 50px;
+        font-size: 18px;
+        font-style: italic;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1750px;
+        margin-top: 50px;
+      }
+
+      .content-card {
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #1a1a1a;
+        border: 1px solid #333;
+      }
+
+      .content-card:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease;
+        filter: brightness(1.2);
+      }
+
+      .content-media {
+        width: 100%;
+        display: block;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .card-body {
+        padding: 15px;
+        color: white;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 16px;
+        color: #FF7B00;
+      }
+
+      .card-desc {
+        margin: 5px 0 0;
+        font-size: 13px;
+        color: #aaa;
+      }
+
+      .card-link {
+        color: #FF7B00;
+        text-decoration: underline;
+      }
+
+      .footer-container {
+        margin-top: 50px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 20px;
+        font-size: 24px;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .icon {
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        transition: 0.25s;
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .icon:hover {
+        color: #FF7B00;
+        transform: translateY(-15px) scale(1.7);
+      }
+
+      .social-link {
+        color: #FF7B00;
+      }
+
+      .footer-quote {
+        color: #555;
+        color: #ffffff;
+        max-width: 400px;
+        margin: 0 auto 40px;
+      }
+
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000b3;
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: #2b2d31;
+        border: 1px solid #FF7B00;
+        padding: 20px;
+        border-radius: 12px;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 10px 30px #00000080;
+        color: white;
+      }
+
+      .modal-header {
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        background: #707070;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 4px;
+      }
+
+      .modal-btn {
+        margin-top: 20px;
+        border: 2px solid #ff7B00;
+        background: #2b2d31;
+        padding: 8px 30px;
+        border-radius: 24px;
+        color: #f8f9fa;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .modal-btn:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease;
+        filter: brightness(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="harvic819063.github.io">
+        <button class="home-btn">
+          <i class="fa-solid fa-house"></i>
+        </button>
+      </a>
+      <div class="auth-buttons">
+        <a href="About Me.html" target="_blank" class="auth-link">
+          <button class="auth-btn user">
+            <i class="fa-solid fa-user user-icon"></i>
+          </button>
+        </a>
+        <button class="auth-btn" onclick="showAlert()">Login</button>
+        <button class="auth-btn" onclick="showAlert()">Signup</button>
+      </div>
+    </div>
+    <div class="logo-container">
+      <span class="logo-tech">Tech</span>
+      <span class="logo-hub">Hub</span>
+    </div>
+    <div class="section-title">
+      <strong>Macbook neo, The budget Mac.</strong>
+    </div>
+    <div id="noResults">No tech matches found. Try searching for "Game" or "Hardware"!</div>
+    <article>
+      <h1>The MacBook Neo: Apple’s $599 Gateway into the Ecosystem</h1>
+      <p>Released in March 2026, the MacBook Neo represents a massive shift in Apple’s laptop strategy. By swapping out the traditional Mac-specific M-series silicon for the highly efficient A18 Pro chip (the same architecture powering their high-end iPhones), Apple has created its most affordable laptop to date. Designed to compete directly with premium Chromebooks and budget Windows machines, the MacBook Neo is an entry-level device that promises the premium macOS experience without the premium price tag. Here is a deep dive into its pricing, specifications, and how it holds up for different types of users. </p>
+      <div class="content-card">
+        <img src="images/Macbook_neo/1.jpeg" alt="OS" class="content-media"></img>
+      </div>
+      <h2>Pricing and Availability.</h2>
+      <p>Apple has aggressively priced the MacBook Neo to make it accessible to a much wider audience: <br>
+        <b>Base Price: </b>$599 (U.S.) <br>
+        <b>Education Pricing: </b>$499 (available to college students, teachers, and school staff) <br> At nearly half the cost of a base MacBook Air, the Neo completely redefines the barrier to entry for the Apple ecosystem.
+      </p>
+      <div class="content-card">
+        <img src="images/Macbook_neo/2.jpeg" alt="OS" class="content-media"></img>
+      </div>
+      <h2>Detailed Specifications.</h2>
+      <p>To hit this price point, Apple made strategic hardware choices. The device relies on a passive, fanless cooling system and introduces a notchless display, while making minor compromises in port speeds.
+      <table border="1">
+        <th colspan="2">Macbook neo specifications</th>
+        <tr>
+          <td>
+            <strong>Features</strong>
+          </td>
+          <td>
+            <strong>Specifications</strong>
+          </td>
+        </tr>
+        <tr>
+          <td>processor</td>
+          <td>Apple A18 Pro (6-core CPU, 5-core GPU)</td>
+        </tr>
+        <tr>
+          <td>Memory</td>
+          <td>8GB Unified Memory (Standard)</td>
+        </tr>
+        <tr>
+          <td>Storage</td>
+          <td>256GB or 512GB SSD</td>
+        </tr>
+        <tr>
+          <td>Display</td>
+          <td>13-inch Liquid Retina (Notchless, 2408 x 1506 resolution)</td>
+        </tr>
+        <tr>
+          <td>Ports</td>
+          <td>1x USB-C (10Gbps / DP 1.4), 1x USB-C (USB 2.0 speeds), 3.5mm Headphone Jack</td>
+        </tr>
+        <tr>
+          <td>Camera</td>
+          <td>1080p FaceTime HD</td>
+        </tr>
+        <tr>
+          <td>Connectivity</td>
+          <td>Wi-Fi 6E, Bluetooth 6</td>
+        </tr>
+        <tr>
+          <td>Weight & Build</td>
+          <td>2.7 lbs (1.23 kg), Fanless Aluminum Enclosure</td>
+        </tr>
+        <tr>
+          <td>Colors</td>
+          <td>Silver, Blush, Citrus, Indigo</td>
+        </tr>
+      </table>
+      <p>
+        <strong>Note on Ports: </strong>A unique quirk of the MacBook Neo is its USB-C configuration. <br> The second port runs at USB 2.0 speeds (480Mbps) and is primarily intended for charging or connecting basic peripherals like a mouse.
+      </p>
+      </p>
+      <div class="content-card">
+        <img src="images/Macbook_neo/3.jpeg" alt="OS" class="content-media"></img>
+      </div>
+      <h2>Everyday Use: Who is it for?</h2>
+      <p>
+        <b>1. The Student</b>
+        <br> For high school and college students, the MacBook Neo is arguably the best value on the market. At just 2.7 pounds, it is incredibly portable. The A18 Pro chip easily handles 20+ open browser tabs, word processing, and Spotify playing in the background. The $499 education price makes it a no-brainer for students who need a reliable, virus-resistant, and long-lasting machine for writing essays and doing research. <br>
+        <br>
+        <b>2. The Programmer</b>
+        <br> For developers, the MacBook Neo is a mixed bag. <br> The Good: It is a cheap, Unix-based machine. For web development, scripting, students learning to code, or light Xcode use, it will perform admirably. <br> The Catch: The strict 8GB memory limit and the A18 Pro architecture (versus the M-series) mean it is not built for running heavy virtual machines, massive Docker containers, or compiling massive codebases. <br> Professional developers will still want to look toward the MacBook Pro, but the Neo makes for an excellent lightweight secondary machine. <br>
+        <br>
+        <b>3. The Business Professional</b>
+        <br> For small business owners and corporate professionals who live in Microsoft Office, Google Workspace, and Zoom, the Neo is an excellent fit. The 1080p FaceTime HD camera provides clear video for virtual meetings, and the aluminum chassis maintains the sleek, professional aesthetic expected from a Mac. It is a fantastic machine for managing emails, giving presentations, and handling administrative tasks on the go. <br>
+        <br>
+        <b>4. The Apple Ecosystem Fan</b>
+        <br> If you already own an iPhone, Apple Watch, or AirPods but have hesitated to spend over $1,000 on a Mac, the Neo is built for you. It supports the entire continuity ecosystem: you can AirDrop files instantly, use Universal Clipboard to copy on your phone and paste on your Mac, and sync your iMessages flawlessly. It also fully supports the latest Apple Intelligence features, bringing AI-assisted writing and Siri enhancements to a budget-friendly form factor.
+      </p>
+      <div class="content-card">
+        <img src="images/Macbook_neo/4.jpeg" alt="OS" class="content-media"></img>
+      </div>
+      <h2>Performance and Battery Life: The Gaming Test</h2>
+      <p>Apple rates the MacBook Neo for up to 16 hours of battery life for general web browsing and video playback. Because the A18 Pro is a low-wattage, highly efficient mobile chip, you can genuinely leave the charger at home for a standard workday. <br> However, gaming changes the equation entirely: <br>
+        <b>Performance: </b>The 5-core GPU inside the A18 Pro is surprisingly capable. It can easily handle native App Store games, Apple Arcade titles, and well-optimized casual games. However, because the laptop is entirely fanless, thermal throttling is inevitable. If you push the machine with heavier, sustained gaming loads (like running translated Windows games or intense 3D titles), the aluminum body will heat up, and the system will artificially cap its performance to cool itself down. <br>
+        <b>Battery Drain: </b>While you get 16 hours of light use, engaging the 5-core GPU for continuous gaming will drain the battery rapidly. Expect the battery life to drop to roughly 4 to 5 hours during continuous, graphically demanding gaming sessions. <br>
+        <br> Ultimately, the MacBook Neo isn't a gaming laptop. It is a highly efficient, ultra-portable productivity machine that can handle casual gaming on the side, provided you keep your graphical expectations—and your charger—in check.
+      </p>
+      <div class="content-card">
+        <img src="images/Macbook_neo/5.jpeg" alt="OS" class="content-media"></img>
+      </div>
+    </article>
+    <div class="footer-container">
+      <div class="social-icons">
+        <div class="icon">
+          <a href="https://www.instagram.com/_j.a.r.v.y_/" target="_blank" class="social-link">
+            <i class='fab fa-instagram'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.threads.net/@_j.a.r.v.y_" target="_blank" class="social-link">
+            <i class='fab fa-threads'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.facebook.com/harvic.john/" target="_blank" class="social-link">
+            <i class='fab fa-facebook'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.youtube.com/@harvicjohn" target="_blank" class="social-link">
+            <i class='fab fa-youtube'></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-quote"> All rights reserved @HexTech 2026 </div>
+    </div>
+    <div id="customAlert" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <p id="modalMessage">Service not available at the moment.</p>
+        <button onclick="closeModal()" class="modal-btn">OK</button>
+      </div>
+    </div>
+    <script>
+      function showAlert() {
+        document.getElementById('customAlert').style.display = 'flex';
+      }
+    </script>
+  </body>
+</html>
