@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preload" as="image" href="images/TechHub_logo.png">
-    <title>the Illusion of now.</title>
+    <title>The Illusion of Now - TechHub</title>
     <link rel="icon" type="image/png" href="images/favicon/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -26,9 +26,10 @@
 
       article {
         background-color: #050505;
+        max-width: 900px;
+        width: 100%;
         padding: 40px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        color: #f8f9fa;
       }
 
       h1 {
@@ -38,61 +39,86 @@
         line-height: 1.2;
       }
 
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0 30px 0;
+        font-size: 14px;
+        color: #FF7B00;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+      }
+
+      .article-avatar {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #FF7B00, #FF5500);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #050505;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
       h2 {
         color: #FF7B00;
         font-size: 1.8em;
         margin-top: 40px;
-        padding-bottom: 0px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #FF7B00;
+        letter-spacing: 1px;
       }
 
       p {
         color: #f8f9fa;
         font-size: 1.1em;
         margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
       }
 
-      .highlight {
-        background-color: #f1c40f;
-        padding: 2px 5px;
-        border-radius: 3px;
-        font-weight: bold;
-      }
-
-      blockquote {
+      .pull-quote {
         font-size: 1.3em;
         font-style: italic;
-        color: #555;
+        color: #FFB84D;
         margin: 30px 0;
-        padding-left: 20px;
-        background-color: #050505;
-        padding: 15px 20px;
+        padding: 20px;
+        border-left: 4px solid #FF7B00;
+        background-color: #1a1a1a;
+        border-radius: 4px;
       }
 
-      ul {
-        color: #f8f9fa;
-        font-size: 1.1em;
-        margin-bottom: 20px;
+      em {
+        color: #FF7B00;
+        font-style: italic;
       }
 
-      li {
-        margin-bottom: 10px;
+      strong {
+        color: #FFB84D;
+        font-weight: bold;
       }
 
       .author-note {
         font-size: 0.9em;
         color: #7f8c8d;
-        text-align: right;
+        text-align: center;
         margin-top: 50px;
-        border-top: 1px solid #eee;
+        border-top: 1px solid #333;
         padding-top: 20px;
       }
 
       a {
         text-decoration: none;
+        color: #FF7B00;
       }
 
       a:hover {
-        color: #FFFFFF !important;
+        color: #FFB84D !important;
       }
 
       .navbar {
@@ -101,6 +127,7 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 50px;
+        max-width: 1400px;
       }
 
       .home-btn {
@@ -173,58 +200,6 @@
         border-radius: 36px;
       }
 
-      .search-section {
-        width: 100%;
-        max-width: 700px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .search-bar-container {
-        display: flex;
-        width: 100%;
-        gap: 10px;
-      }
-
-      .search-input {
-        flex: 1;
-        padding: 12px 25px;
-        font-size: 16px;
-        border-radius: 24px;
-        border: 2px solid #FF7B00;
-        background-color: #2b2d31;
-        color: white;
-        outline: none;
-      }
-
-      .search-btn {
-        background-color: #FF7B00;
-        color: #000000;
-        border: none;
-        padding: 0 25px;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 24px;
-        cursor: pointer;
-      }
-
-      .tag-buttons-container {
-        margin-top: 10px;
-        display: flex;
-        gap: 12px;
-      }
-
-      .tag-btn {
-        background-color: #2b2d31;
-        color: #f8f9fa;
-        border: 2px solid #FF7B00;
-        padding: 10px 20px;
-        font-size: 14px;
-        border-radius: 24px;
-        cursor: pointer;
-      }
-
       .section-title {
         font-size: 24px;
         text-align: center;
@@ -233,7 +208,7 @@
         justify-content: center;
         border-left: 3px solid #FF7B00;
         border-bottom: 3px solid #FF7B00;
-        margin-top: 30px;
+        margin-bottom: 30px;
         border-radius: 24px;
       }
 
@@ -241,69 +216,11 @@
         color: #FFFFFF;
       }
 
-      #noResults {
-        display: none;
-        color: #aaa;
-        margin-top: 50px;
-        font-size: 18px;
-        font-style: italic;
-      }
-
-      .content-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 20px;
-        width: 100%;
-        max-width: 1750px;
-        margin-top: 50px;
-      }
-
-      .content-card {
-        border-radius: 12px;
-        overflow: hidden;
-        background-color: #1a1a1a;
-        border: 1px solid #333;
-      }
-
-      .content-card:hover {
-        transform: scale(1.05);
-        transition: 0.3s ease;
-        filter: brightness(1.2);
-      }
-
-      .content-media {
-        width: 100%;
-        display: block;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-      }
-
-      .card-body {
-        padding: 15px;
-        color: white;
-      }
-
-      h3 {
-        margin: 0;
-        font-size: 16px;
-        color: #FF7B00;
-      }
-
-      .card-desc {
-        margin: 5px 0 0;
-        font-size: 13px;
-        color: #aaa;
-      }
-
-      .card-link {
-        color: #FF7B00;
-        text-decoration: underline;
-      }
-
       .footer-container {
-        margin-top: 50px;
+        margin-top: 80px;
         text-align: center;
         width: 100%;
+        padding: 40px 0;
       }
 
       .social-icons {
@@ -400,11 +317,38 @@
         transition: 0.3s ease;
         filter: brightness(1.2);
       }
+
+      @media (max-width: 768px) {
+        .navbar {
+          margin-bottom: 30px;
+        }
+
+        .logo-container {
+          font-size: 60px;
+          margin-bottom: 20px;
+        }
+
+        article {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        h2 {
+          font-size: 1.4em;
+        }
+
+        p {
+          font-size: 1em;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="navbar">
-      <a href="harvic819063.github.io">
+      <a href="index.html">
         <button class="home-btn">
           <i class="fa-solid fa-house"></i>
         </button>
@@ -419,15 +363,87 @@
         <button class="auth-btn" onclick="showAlert()">Signup</button>
       </div>
     </div>
+
     <div class="logo-container">
       <span class="logo-tech">Tech</span>
       <span class="logo-hub">Hub</span>
     </div>
+
     <div class="section-title">
       <strong>The Illusion of now.</strong>
     </div>
-    <div id="noResults">No tech matches found. Try searching for "Game" or "Hardware"!</div>
-    <article></article>
+
+    <article>
+      <h1>The <span style="color: #FF7B00;">Illusion</span> of Now</h1>
+      
+      <div class="article-meta">
+        <div class="article-avatar">H</div>
+        <span>HARVICJOHN</span>
+        <span>—</span>
+        <span>8 MIN READ</span>
+        <span>—</span>
+        <span>APRIL 5, 2026</span>
+      </div>
+
+      <div class="pull-quote">
+        Your computer isn't doing many things at once. It's doing one thing so fast it convinces you — and itself — that it is.
+      </div>
+
+      <p>When you're typing an email while Spotify plays in the background and three browser tabs load in your peripheral, it feels like your computer is juggling all of these tasks simultaneously. The cursor blinks where you're typing. The song flows without stuttering. The tabs populate with content. Everything happens <em>now</em>.</p>
+
+      <p>But this is a masterpiece of illusion.</p>
+
+      <p>Deep inside your processor, there is no parallel universe where your laptop is simultaneously writing, playing, and loading. There is only a single thread of consciousness—the CPU core—that rapidly switches between these tasks so quickly that your perception can't catch the gaps. It's like a film projector flashing still frames at 60 times a second; your brain stitches them together into the illusion of continuous motion.</p>
+
+      <p>This is multitasking. Not really multitasking—<em>apparent</em> multitasking. And the illusion is so convincing that even your operating system has come to believe it.</p>
+
+      <h2>The Birth of the Illusion</h2>
+
+      <p>In the early days of computing, this wasn't how it worked. Computers could only do one thing at a time. Period. If you wanted to run two programs, you had to wait for the first to finish before starting the second. Computing was purely sequential.</p>
+
+      <p>But humans don't work sequentially. We context-switch constantly. We read an email, get interrupted, check the weather, return to the email. We paint while music plays and our child talks to us. The computer's rigid single-task nature felt alien and limiting.</p>
+
+      <p>So engineers invented the scheduler—an invisible conductor that divides each processor's time into microscopically small slices and distributes them among waiting tasks. Task A gets a slice. Then Task B. Then Task C. Then back to Task A. The slices are so thin—measured in milliseconds—that our perception of time can't resolve them. Everything appears simultaneous.</p>
+
+      <h2>The Cost of Consciousness</h2>
+
+      <p>The price of this illusion is context. Every time the CPU switches from one task to another, it must save the current state of that task (where it was in the code, what values were in memory) and load the state of the next task. This overhead is called a context switch, and it's not free. It's not even cheap.</p>
+
+      <p>Consider a web browser. While you're typing in a text field, the browser's rendering engine might be painting pixels on screen, the JavaScript engine might be executing a background script, the network thread might be downloading an image. Each switch between these operations consumes CPU cycles that could have been spent actually <em>doing</em> the work.</p>
+
+      <p>If you have 10 applications demanding attention, you're not dividing the CPU's power among 10 applications—you're dividing it among 10 applications <em>plus</em> the overhead of switching between them. The more tasks competing for time, the slower everything becomes.</p>
+
+      <p>This is why old computers felt sluggish when you ran multiple programs. Not because they were weak, but because they were being asked to maintain the illusion of parallelism for too many concurrent tasks.</p>
+
+      <h2>The Myth of Multitasking</h2>
+
+      <p>Neuroscience confirms what engineers learned long ago: the brain also cannot truly multitask. When you believe you're simultaneously emailing and watching a video, you're actually context-switching between them, and each switch has a cognitive cost. Studies show that multitasking reduces productivity compared to focused single-tasking, though we don't perceive the loss because our perception is tied to the same switching mechanism.</p>
+
+      <p>Your brain and your computer are committing the same elegant deception.</p>
+
+      <h2>The New Illusion: Parallel Processing</h2>
+
+      <p>Modern processors have complicated this story. Multicore chips—processors with multiple CPUs on the same die—do enable genuine parallelism for some tasks. A four-core processor can truly run four things at once (though even here, the operating system's scheduler often further divides each core among multiple tasks).</p>
+
+      <p>But even with parallelism, the fundamental principle holds: your computer can do fewer things simultaneously than you ask of it, so it creates the illusion of doing them all by switching rapidly between them. The number of things it can truly do at once has grown, but it hasn't grown nearly as fast as the number of things we ask it to do.</p>
+
+      <p>A modern laptop might have 8 cores but 200+ active processes. The illusion persists, deeper than ever.</p>
+
+      <h2>What This Means for You</h2>
+
+      <p>Understanding this illusion changes how you think about computing. When your browser becomes slow, it's not because the web is inherently slow—it's because your computer is context-switching frantically, trying to serve the browser, the operating system, your antivirus, your cloud storage, and the twelve extensions you installed. Each context switch is a tiny theft of the processing time that could be rendering your web page.</p>
+
+      <p>When your phone feels laggy, the reason isn't mysterious. It's a direct consequence of the illusion breaking down—too many tasks demanding time, too many context switches happening, the gaps between slices becoming perceptible.</p>
+
+      <p>The antidote isn't more processing power. The antidote is fewer tasks. Close the tabs you're not using. Quit the applications running in the background. Reduce the number of things competing for the CPU's attention, and the scheduler's job becomes easier. The illusion stabilizes. Everything feels snappier.</p>
+
+      <p>Because the illusion, maintained properly, is indistinguishable from the real thing.</p>
+
+      <div class="author-note">
+        <p><strong>What do you think runs on your computer right now?</strong> Do an experiment: check your task manager or Activity Monitor. Count the processes. Realize how many things are competing for a single CPU's attention. The number will surprise you.</p>
+      </div>
+    </article>
+
     <div class="footer-container">
       <div class="social-icons">
         <div class="icon">
@@ -451,9 +467,10 @@
           </a>
         </div>
       </div>
-      <div class="footer-quote"> Remember! Coding is poetry written in pure logic. </div>
-      <div style="color: #ffffff;"> ©2026 TechHub - ALL RIGHTS RESERVED <br> Sources: IDC · CNBC · Wccftech · TrendForce · Tom's Hardware · Windows Central </div>
+      <div class="footer-quote">Remember! Coding is poetry written in pure logic.</div>
+      <div style="color: #ffffff;">©2026 TechHub - ALL RIGHTS RESERVED<br>Sources: IDC · CNBC · Wccftech · TrendForce · Tom's Hardware · Windows Central</div>
     </div>
+
     <div id="customAlert" class="modal-overlay">
       <div class="modal-content">
         <div class="modal-header">
@@ -465,6 +482,7 @@
         <button onclick="closeModal()" class="modal-btn">OK</button>
       </div>
     </div>
+
     <script>
       function showAlert() {
         document.getElementById('customAlert').style.display = 'flex';
@@ -472,27 +490,6 @@
 
       function closeModal() {
         document.getElementById('customAlert').style.display = 'none';
-      }
-
-      function filterContent() {
-        const input = document.getElementById('searchInput');
-        const filter = input.value.toLowerCase();
-        const cards = document.getElementsByClassName('content-card');
-        const noResults = document.getElementById('noResults');
-        let visibleCount = 0;
-        for (let i = 0; i < cards.length; i++) {
-          const title = cards[i].getElementsByTagName("h3")[0];
-          const description = cards[i].getElementsByTagName("p")[0];
-          const textValue = (title ? title.textContent : "") + " " + (description ? description.textContent : "");
-          if (textValue.toLowerCase().indexOf(filter) > -1) {
-            cards[i].style.display = "";
-            visibleCount++;
-          } else {
-            cards[i].style.display = "none";
-          }
-        }
-        // Show "No Results" message if everything is hidden
-        noResults.style.display = (visibleCount === 0) ? "block" : "none";
       }
     </script>
   </body>
