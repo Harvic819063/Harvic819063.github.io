@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>Humanity Returns to the Moon - TechHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      body {
+        background: #050505;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+      }
+
+      article {
+        background: #050505;
+        max-width: 900px;
+        width: 100%;
+        padding: 40px;
+        color: #f8f9fa;
+      }
+
+      h1 {
+        color: #f8f9fa;
+        font-size: 45px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0 30px;
+        font-size: 14px;
+        color: #FF7B00;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .article-avatar {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #FF7B00, #FF5500);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #050505;
+        font-weight: bold;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      h2 {
+        color: #FF7B00;
+        font-size: 1.8em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #FF7B00;
+        letter-spacing: 1px;
+      }
+
+      p {
+        color: #f8f9fa;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+
+      .pull-quote {
+        font-size: 1.3em;
+        font-style: italic;
+        color: #FFB84D;
+        margin: 30px 0;
+        padding: 20px;
+        border-left: 4px solid #FF7B00;
+        background: #1a1a1a;
+        border-radius: 4px;
+      }
+
+      em {
+        color: #FF7B00;
+        font-style: italic;
+      }
+
+      strong {
+        color: #FFB84D;
+        font-weight: bold;
+      }
+
+      a {
+        text-decoration: none;
+        color: #FF7B00;
+      }
+
+      a:hover {
+        color: #FFB84D !important;
+      }
+
+      .author-note {
+        font-size: .9em;
+        color: #7f8c8d;
+        text-align: center;
+        margin-top: 50px;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+        max-width: 1400px;
+      }
+
+      .home-btn {
+        background: #2b2d31;
+        color: #FF7B00;
+        border: 2px solid #FF7B00;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .auth-link {
+        flex: 1;
+      }
+
+      .auth-btn {
+        background: #2b2d31;
+        color: #f8f9fa;
+        border: 2px solid #FF7B00;
+        padding: 8px 20px;
+        font-size: 14px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .auth-btn.user {
+        border-radius: 50px;
+      }
+
+      .user-icon {
+        color: #FF7B00;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        transition: .3s ease;
+        filter: brightness(1.2);
+      }
+
+      .logo-container {
+        font-size: 90px;
+        font-weight: bold;
+        letter-spacing: -5px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-tech {
+        color: #FFFFFF;
+      }
+
+      .logo-hub {
+        background: #FF7B00;
+        color: #050505;
+        margin-left: 5px;
+        padding: 2px 15px;
+        border-radius: 36px;
+      }
+
+      .section-title {
+        font-size: 24px;
+        text-align: center;
+        padding: 7.5px;
+        display: flex;
+        justify-content: center;
+        border-left: 3px solid #FF7B00;
+        border-bottom: 3px solid #FF7B00;
+        margin-bottom: 30px;
+        border-radius: 24px;
+      }
+
+      .section-title strong {
+        color: #FFFFFF;
+      }
+
+      .stat-row {
+        display: flex;
+        gap: 16px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      .stat-box {
+        flex: 1;
+        min-width: 140px;
+        background: #111;
+        border: 1px solid #2a2a2a;
+        border-top: 3px solid #FF7B00;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .stat-box .num {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #FF7B00;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .stat-box .desc {
+        font-size: .72rem;
+        color: #666;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        line-height: 1.4;
+      }
+
+      .callout {
+        background: #0f0f0f;
+        border: 1px solid #333;
+        border-left: 4px solid #FF7B00;
+        border-radius: 4px;
+        padding: 18px 22px;
+        margin: 28px 0;
+        color: #aaa;
+        font-size: .95em;
+        line-height: 1.7;
+      }
+
+      .callout .callout-label {
+        display: block;
+        font-size: .7em;
+        letter-spacing: .25em;
+        text-transform: uppercase;
+        color: #FF7B00;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      .mission-card {
+        background: #111;
+        border: 1px solid #2a2a2a;
+        border-left: 3px solid #FF7B00;
+        padding: 18px;
+        margin-bottom: 14px;
+      }
+
+      .mission-card .mission-name {
+        font-size: .72rem;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: #FF7B00;
+        margin-bottom: 6px;
+      }
+
+      .mission-card h4 {
+        color: #f8f9fa;
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      .mission-card p {
+        font-size: .85rem;
+        color: #777;
+        line-height: 1.6;
+        margin: 0;
+        text-align: left;
+      }
+
+      .mission-card .date-badge {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: .62rem;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        background: #1a1a1a;
+        color: #FF7B00;
+        border: 1px solid #333;
+      }
+
+      .footer-container {
+        margin-top: 80px;
+        text-align: center;
+        width: 100%;
+        padding: 40px 0;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 20px;
+        font-size: 24px;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .icon {
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        transition: .25s;
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .icon:hover {
+        color: #FF7B00;
+        transform: translateY(-15px) scale(1.7);
+      }
+
+      .social-link {
+        color: #FF7B00;
+      }
+
+      .footer-quote {
+        border-bottom: 3px solid #FF7B00;
+        border-radius: 24px;
+        padding: 15px;
+        color: #fff;
+        max-width: 400px;
+        margin: 0 auto 40px;
+      }
+
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000b3;
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: #2b2d31;
+        border: 1px solid #FF7B00;
+        padding: 20px;
+        border-radius: 12px;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 10px 30px #00000080;
+        color: white;
+      }
+
+      .modal-header {
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        background: #707070;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 4px;
+      }
+
+      .modal-btn {
+        margin-top: 20px;
+        border: 2px solid #ff7B00;
+        background: #2b2d31;
+        padding: 8px 30px;
+        border-radius: 24px;
+        color: #f8f9fa;
+        cursor: pointer;
+        transition: .3s;
+      }
+
+      .modal-btn:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+
+      @media(max-width:768px) {
+        .navbar {
+          margin-bottom: 30px;
+        }
+
+        .logo-container {
+          font-size: 60px;
+          margin-bottom: 20px;
+        }
+
+        article {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        h2 {
+          font-size: 1.4em;
+        }
+
+        p {
+          font-size: 1em;
+        }
+
+        .stat-row {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="https://techhub.harvic005.workers.dev/">
+        <button class="home-btn">
+          <i class="fa-solid fa-house"></i>
+        </button>
+      </a>
+      <div class="auth-buttons">
+        <a href="About Me.html" target="_blank" class="auth-link">
+          <button class="auth-btn user">
+            <i class="fa-solid fa-user user-icon"></i>
+          </button>
+        </a>
+        <button class="auth-btn" onclick="showAlert()">Login</button>
+        <button class="auth-btn" onclick="showAlert()">Signup</button>
+      </div>
+    </div>
+    <div class="logo-container">
+      <span class="logo-tech">Tech</span>
+      <span class="logo-hub">Hub</span>
+    </div>
+    <div class="section-title">
+      <strong>Humanity Returns to the Moon.</strong>
+    </div>
+    <article>
+      <h1>Humanity Returns to <span style="color:#FF7B00;">the Moon</span>
+      </h1>
+      <div class="article-meta">
+        <div class="article-avatar">H</div>
+        <span>HARVICJOHN</span>
+        <span>—</span>
+        <span>10 MIN READ</span>
+        <span>—</span>
+        <span>APRIL 18, 2026</span>
+      </div>
+      <p>On April 1, 2026, NASA's Space Launch System lifted off from Launch Pad 39B at Kennedy Space Center, carrying four astronauts on the most significant human spaceflight in over half a century. Artemis II — the first crewed mission beyond low Earth orbit since Apollo 17 in December 1972 — was underway. On April 6, when Orion swung around the Moon and surpassed the previous distance record set by Apollo 13, it became the farthest human spaceflight in history.</p>
+      <p>The astronauts returned safely to Earth shortly after. But what they left behind — in terms of tested hardware, validated systems, and the sheer fact that humans had again traveled to the vicinity of the Moon — is the foundation for everything that comes next. The space race of the 2020s is not between superpowers competing for flags. It is a coordinated, multi-decade campaign to establish a permanent human presence beyond Earth, ultimately aimed at Mars.</p>
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num">April 1</div>
+          <div class="desc">Artemis II launch date, 2026</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">50+yrs</div>
+          <div class="desc">Since humans last traveled near the Moon</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">61</div>
+          <div class="desc">Countries signed the Artemis Accords</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">2028</div>
+          <div class="desc">Target for first crewed Moon landing (Artemis IV)</div>
+        </div>
+      </div>
+      <h2>What Artemis II Actually Did</h2>
+      <p>Artemis II was not a landing mission. NASA astronauts Reid Wiseman, Victor Glover, and Christina Koch, alongside CSA astronaut Jeremy Hansen, flew aboard Orion on a ten-day lunar flyby — a free-return trajectory that swung the spacecraft around the Moon without entering orbit. The mission's purpose was validation: prove that Orion and its European Service Module can sustain crew for the duration of a deep-space mission, test life support and communications, and confirm the systems needed for Artemis III and the eventual lunar landing.</p>
+      <p>On April 6, Orion reached its closest approach to the lunar surface — approximately 4,067 miles — and continued outbound, breaking the Apollo 13 distance record. The crew conducted science investigations, tested handheld instrumentation, and captured the first flyby images of the Moon by NASA astronauts in over five decades. Every system performed. The spacecraft came home.</p>
+      <div class="pull-quote">"Spurred by American ingenuity, astronauts on NASA's Artemis II mission are in flight, preparing for the first crewed lunar flyby in more than 50 years." — NASA, April 1, 2026</div>
+      <h2>The Road from Here to the Moon's Surface</h2>
+      <p>Artemis II was step two of a multi-mission architecture. The path to an actual Moon landing has been revised multiple times, but as of April 2026, the roadmap is the clearest it has ever been.</p>
+      <div class="mission-card">
+        <div class="mission-name">Artemis II — Complete</div>
+        <h4>First Crewed Lunar Flyby in 50+ Years</h4>
+        <p>Four astronauts flew around the Moon on a 10-day mission. All Orion systems validated for deep-space crewed operations. Farthest human spaceflight in history.</p>
+        <span class="date-badge">April 2026 ✓</span>
+      </div>
+      <div class="mission-card">
+        <div class="mission-name">Artemis III — LEO Test Flight</div>
+        <h4>Rendezvous with Commercial Lunar Landers</h4>
+        <p>Orion will dock with one or both commercial landers (SpaceX Starship HLS and Blue Origin Blue Moon) in low Earth orbit. Spacesuits tested. No Moon landing — preparation for IV.</p>
+        <span class="date-badge">2027</span>
+      </div>
+      <div class="mission-card">
+        <div class="mission-name">Artemis IV — First Crewed Lunar Landing</div>
+        <h4>Return to the Moon's Surface</h4>
+        <p>Four astronauts travel to lunar orbit. Two descend to the lunar south pole aboard a commercial lander for a surface stay of approximately one week. First humans on the Moon since Apollo 17 in 1972.</p>
+        <span class="date-badge">Target: Early 2028</span>
+      </div>
+      <div class="mission-card">
+        <div class="mission-name">Artemis V+ — Sustained Presence</div>
+        <h4>Annual Missions, Gateway Station, Mars Prep</h4>
+        <p>Missions roughly once per year. Construction of the Lunar Gateway station in lunar orbit. Long-duration surface stays. Technology demonstration for eventual crewed Mars missions.</p>
+        <span class="date-badge">2029 Onward</span>
+      </div>
+      <h2>The Commercial Engine Driving It All</h2>
+      <p>What makes the Artemis era structurally different from Apollo is the role of the private sector. SpaceX's Starship — the vehicle that will carry astronauts from lunar orbit to the surface — is also the most capable rocket ever built. Blue Origin's Blue Moon lander is the backup option. Both are commercial partnerships under contract, not government-built systems.</p>
+      <p>The commercial lunar payload services (CLPS) program has already delivered scientific payloads to the Moon, including Intuitive Machines' IM-1 mission in 2024 — the first commercial landing in history. By late 2026, multiple commercial missions are planned: IM-3 targeting Reiner Gamma, Blue Moon Pathfinder Mission 1, Astrobotic's Griffin Mission One near the south pole, and China's Chang'e 7 also targeting the lunar south pole.</p>
+      <div class="callout">
+        <span class="callout-label">The Artemis Accords & Space Geopolitics</span>61 countries have signed the Artemis Accords as of early 2026, establishing a framework for peaceful lunar exploration. China and Russia are notably absent, pursuing their own lunar programs. China plans to land taikonauts on the Moon before 2030. The Moon is becoming contested territory — not militarily, but commercially and geopolitically. Whoever establishes the first permanent presence at the lunar south pole, with its water ice deposits, may have a decisive advantage in the long-term economics of space.
+      </div>
+      <h2>Why Any of This Matters on Earth</h2>
+      <p>The case for returning to the Moon is not purely about exploration. The lunar south pole holds water ice in permanently shadowed craters — water that can be electrolyzed into hydrogen and oxygen, the same propellants that power rocket engines. A refueling depot on the Moon reduces the cost of reaching Mars by orders of magnitude. It is not a destination. It is a stepping stone.</p>
+      <p>Beyond propellant economics, the materials science and biology lessons from lunar surface operations will directly inform the technology needed to keep humans alive during a multi-year Mars transit. Every Artemis mission is, in part, a Mars rehearsal. The investment is long-cycle and politically fragile — it has already survived multiple changes of administration, budget fights, and schedule slips. But the hardware is flying. The astronauts came home safely. And for the first time since 1972, humans have traveled to the Moon.</p>
+      <p>Whatever comes next — setbacks, schedule changes, budget battles — that fact cannot be taken away. The era of humans beyond Earth orbit has resumed.</p>
+      <div class="author-note">Sources: NASA, Wikipedia 2026 in spaceflight, Artemis II mission updates — April 2026.</div>
+    </article>
+    <div class="footer-container">
+      <div class="social-icons">
+        <div class="icon">
+          <a href="https://www.instagram.com/_h.a.r.v.i.c_/" target="_blank" class="social-link">
+            <i class='fab fa-instagram'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.threads.net/@_h.a.r.v.i.c_" target="_blank" class="social-link">
+            <i class='fab fa-threads'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.facebook.com/harvic.john/" target="_blank" class="social-link">
+            <i class='fab fa-facebook'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.youtube.com/@harvicjohn" target="_blank" class="social-link">
+            <i class='fab fa-youtube'></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-quote">Remember! Coding is poetry written in pure logic.</div>
+      <div style="color:#fff;">©2026 TechHub - ALL RIGHTS RESERVED</div>
+    </div>
+    <div id="customAlert" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <p id="modalMessage">Service not available at the moment.</p>
+        <button onclick="closeModal()" class="modal-btn">OK</button>
+      </div>
+    </div>
+    <script>
+      function showAlert() {
+        document.getElementById('customAlert').style.display = 'flex';
+      }
+
+      function closeModal() {
+        document.getElementById('customAlert').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>The Battery That Changes Everything - TechHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      body {
+        background: #050505;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+      }
+
+      article {
+        background: #050505;
+        max-width: 900px;
+        width: 100%;
+        padding: 40px;
+        color: #f8f9fa;
+      }
+
+      h1 {
+        color: #f8f9fa;
+        font-size: 45px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0 30px;
+        font-size: 14px;
+        color: #FF7B00;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .article-avatar {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #FF7B00, #FF5500);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #050505;
+        font-weight: bold;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      h2 {
+        color: #FF7B00;
+        font-size: 1.8em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #FF7B00;
+        letter-spacing: 1px;
+      }
+
+      p {
+        color: #f8f9fa;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+
+      .pull-quote {
+        font-size: 1.3em;
+        font-style: italic;
+        color: #FFB84D;
+        margin: 30px 0;
+        padding: 20px;
+        border-left: 4px solid #FF7B00;
+        background: #1a1a1a;
+        border-radius: 4px;
+      }
+
+      em {
+        color: #FF7B00;
+        font-style: italic;
+      }
+
+      strong {
+        color: #FFB84D;
+        font-weight: bold;
+      }
+
+      a {
+        text-decoration: none;
+        color: #FF7B00;
+      }
+
+      a:hover {
+        color: #FFB84D !important;
+      }
+
+      .author-note {
+        font-size: .9em;
+        color: #7f8c8d;
+        text-align: center;
+        margin-top: 50px;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+        max-width: 1400px;
+      }
+
+      .home-btn {
+        background: #2b2d31;
+        color: #FF7B00;
+        border: 2px solid #FF7B00;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .auth-link {
+        flex: 1;
+      }
+
+      .auth-btn {
+        background: #2b2d31;
+        color: #f8f9fa;
+        border: 2px solid #FF7B00;
+        padding: 8px 20px;
+        font-size: 14px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .auth-btn.user {
+        border-radius: 50px;
+      }
+
+      .user-icon {
+        color: #FF7B00;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        transition: .3s ease;
+        filter: brightness(1.2);
+      }
+
+      .logo-container {
+        font-size: 90px;
+        font-weight: bold;
+        letter-spacing: -5px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-tech {
+        color: #FFFFFF;
+      }
+
+      .logo-hub {
+        background: #FF7B00;
+        color: #050505;
+        margin-left: 5px;
+        padding: 2px 15px;
+        border-radius: 36px;
+      }
+
+      .section-title {
+        font-size: 24px;
+        text-align: center;
+        padding: 7.5px;
+        display: flex;
+        justify-content: center;
+        border-left: 3px solid #FF7B00;
+        border-bottom: 3px solid #FF7B00;
+        margin-bottom: 30px;
+        border-radius: 24px;
+      }
+
+      .section-title strong {
+        color: #FFFFFF;
+      }
+
+      .stat-row {
+        display: flex;
+        gap: 16px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      .stat-box {
+        flex: 1;
+        min-width: 140px;
+        background: #111;
+        border: 1px solid #2a2a2a;
+        border-top: 3px solid #FF7B00;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .stat-box .num {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #FF7B00;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .stat-box .desc {
+        font-size: .72rem;
+        color: #666;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        line-height: 1.4;
+      }
+
+      .callout {
+        background: #0f0f0f;
+        border: 1px solid #333;
+        border-left: 4px solid #FF7B00;
+        border-radius: 4px;
+        padding: 18px 22px;
+        margin: 28px 0;
+        color: #aaa;
+        font-size: .95em;
+        line-height: 1.7;
+      }
+
+      .callout .callout-label {
+        display: block;
+        font-size: .7em;
+        letter-spacing: .25em;
+        text-transform: uppercase;
+        color: #FF7B00;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 28px 0;
+      }
+
+      .compare-box {
+        background: #111;
+        border: 1px solid #2a2a2a;
+        padding: 18px;
+      }
+
+      .compare-box h4 {
+        font-size: .85rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #222;
+      }
+
+      .compare-box h4.old {
+        color: #555;
+      }
+
+      .compare-box h4.new {
+        color: #FF7B00;
+      }
+
+      .compare-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .compare-box li {
+        font-size: .85rem;
+        color: #777;
+        padding: 5px 0;
+        border-bottom: 1px solid #1a1a1a;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .compare-box li:last-child {
+        border: none;
+      }
+
+      .compare-box li span {
+        color: #FF7B00;
+        font-weight: bold;
+      }
+
+      .timeline {
+        margin: 30px 0;
+      }
+
+      .tl-item {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+        align-items: flex-start;
+      }
+
+      .tl-year {
+        font-size: .72rem;
+        color: #FF7B00;
+        font-weight: bold;
+        letter-spacing: .1em;
+        min-width: 55px;
+        padding-top: 3px;
+      }
+
+      .tl-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tl-dot-outer {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #FF7B00;
+        flex-shrink: 0;
+        margin-top: 4px;
+      }
+
+      .tl-line {
+        width: 2px;
+        flex: 1;
+        background: #2a2a2a;
+        min-height: 30px;
+      }
+
+      .tl-body {
+        padding-bottom: 10px;
+        flex: 1;
+      }
+
+      .tl-body strong {
+        display: block;
+        color: #f8f9fa;
+        margin-bottom: 4px;
+        font-size: .95rem;
+      }
+
+      .tl-body span {
+        font-size: .88rem;
+        color: #888;
+        line-height: 1.6;
+      }
+
+      .footer-container {
+        margin-top: 80px;
+        text-align: center;
+        width: 100%;
+        padding: 40px 0;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 20px;
+        font-size: 24px;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .icon {
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        transition: .25s;
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .icon:hover {
+        color: #FF7B00;
+        transform: translateY(-15px) scale(1.7);
+      }
+
+      .social-link {
+        color: #FF7B00;
+      }
+
+      .footer-quote {
+        border-bottom: 3px solid #FF7B00;
+        border-radius: 24px;
+        padding: 15px;
+        color: #fff;
+        max-width: 400px;
+        margin: 0 auto 40px;
+      }
+
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000b3;
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: #2b2d31;
+        border: 1px solid #FF7B00;
+        padding: 20px;
+        border-radius: 12px;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 10px 30px #00000080;
+        color: white;
+      }
+
+      .modal-header {
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        background: #707070;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 4px;
+      }
+
+      .modal-btn {
+        margin-top: 20px;
+        border: 2px solid #ff7B00;
+        background: #2b2d31;
+        padding: 8px 30px;
+        border-radius: 24px;
+        color: #f8f9fa;
+        cursor: pointer;
+        transition: .3s;
+      }
+
+      .modal-btn:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+
+      @media(max-width:768px) {
+        .navbar {
+          margin-bottom: 30px;
+        }
+
+        .logo-container {
+          font-size: 60px;
+          margin-bottom: 20px;
+        }
+
+        article {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        h2 {
+          font-size: 1.4em;
+        }
+
+        p {
+          font-size: 1em;
+        }
+
+        .stat-row {
+          flex-direction: column;
+        }
+
+        .compare-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="https://techhub.harvic005.workers.dev/">
+        <button class="home-btn">
+          <i class="fa-solid fa-house"></i>
+        </button>
+      </a>
+      <div class="auth-buttons">
+        <a href="About Me.html" target="_blank" class="auth-link">
+          <button class="auth-btn user">
+            <i class="fa-solid fa-user user-icon"></i>
+          </button>
+        </a>
+        <button class="auth-btn" onclick="showAlert()">Login</button>
+        <button class="auth-btn" onclick="showAlert()">Signup</button>
+      </div>
+    </div>
+    <div class="logo-container">
+      <span class="logo-tech">Tech</span>
+      <span class="logo-hub">Hub</span>
+    </div>
+    <div class="section-title">
+      <strong>The Battery That Changes Everything.</strong>
+    </div>
+    <article>
+      <h1>The Battery That Changes <span style="color:#FF7B00;">Everything</span>
+      </h1>
+      <div class="article-meta">
+        <div class="article-avatar">H</div>
+        <span>HARVICJOHN</span>
+        <span>—</span>
+        <span>9 MIN READ</span>
+        <span>—</span>
+        <span>APRIL 18, 2026</span>
+      </div>
+      <p>Range anxiety. Charging time. Fire risk. Battery degradation. These four phrases have defined the ceiling of electric vehicle adoption since the first modern EV rolled off a production line. For fifteen years, the auto industry has been promising a technology that would solve all four at once. In 2026, that technology is no longer a promise — it is beginning to appear in prototype vehicles, pilot fleets, and production roadmaps with firm delivery dates. Solid-state batteries have arrived.</p>
+      <p>The shift from liquid lithium-ion to solid-state electrolytes is not an incremental improvement. It is a fundamental redesign of how energy is stored in a vehicle. The liquid electrolyte that makes current batteries flammable, heavy, and slow to charge is replaced by a solid material — ceramic, polymer, or composite — that is none of those things. The energy density improves by 50–80%, the charging time drops to minutes, and the fire risk effectively disappears.</p>
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num">749mi</div>
+          <div class="desc">Mercedes EQS prototype range on a single charge (Sept 2025)</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">6.5min</div>
+          <div class="desc">Rimac/ProLogium solid-state 10–80% charge time</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">600Wh/kg</div>
+          <div class="desc">Chery's Rhino all-solid-state energy density</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">2030</div>
+          <div class="desc">Target for mass-market SSB EVs globally</div>
+        </div>
+      </div>
+      <h2>What Solid-State Actually Means</h2>
+      <p>A conventional lithium-ion battery uses a liquid electrolyte — a solution that carries lithium ions between the anode and cathode during charge and discharge cycles. The liquid is flammable, degrades over time, and limits how fast you can push ions through it. In extreme conditions (puncture, overcharge, extreme heat), it can ignite. Every design tradeoff in a modern EV battery pack — the thermal management systems, the charging rate limits, the safety buffers — exists because of the liquid.</p>
+      <p>Replace the liquid with a solid and most of those constraints evaporate. Solid-state batteries can operate across a wider temperature range, charge faster without degrading, pack more energy into the same space, and will not catch fire when damaged. The theoretical energy density ceiling of solid-state technology is roughly 500 Wh/kg — compared to 200–300 Wh/kg for current lithium-ion.</p>
+      <div class="compare-grid">
+        <div class="compare-box">
+          <h4 class="old">Current Lithium-Ion</h4>
+          <ul>
+            <li>Energy density <span>200–300 Wh/kg</span>
+            </li>
+            <li>Typical range <span>250–350 mi</span>
+            </li>
+            <li>Fast charge (10–80%) <span>25–45 min</span>
+            </li>
+            <li>Fire risk <span>Present</span>
+            </li>
+            <li>Cold weather loss <span>20–40%</span>
+            </li>
+          </ul>
+        </div>
+        <div class="compare-box">
+          <h4 class="new">Solid-State (Target)</h4>
+          <ul>
+            <li>Energy density <span>400–600 Wh/kg</span>
+            </li>
+            <li>Projected range <span>600–900+ mi</span>
+            </li>
+            <li>Fast charge (10–80%) <span>6–18 min</span>
+            </li>
+            <li>Fire risk <span>Near zero</span>
+            </li>
+            <li>Cold weather loss <span>~1–5%</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h2>The Race to Market</h2>
+      <p>In September 2025, a Mercedes-Benz EQS prototype equipped with Factorial Energy's semi-solid-state battery drove 749 miles on a single charge — from Germany to Sweden with 85 miles of range remaining. Stellantis is testing solid-state-powered Dodge Charger Daytona EVs in 2026. QuantumScape and Volkswagen demonstrated an all-solid-state battery in a Ducati race bike that charges from 10% to 80% in just 12 minutes.</p>
+      <p>Chinese automakers are moving even faster. Changan Automobile's "Golden Bell" all-solid-state battery claims 932 miles of range at 400 Wh/kg, with trial installations beginning by Q3 2026. Chery's Rhino series reaches 600 Wh/kg and targets testing in 2027. NIO already sells a semi-solid-state 150 kWh pack delivering 577 miles of range in production vehicles today.</p>
+      <div class="pull-quote">"By 2030, industry projections suggest solid-state could account for up to 40% of all EV batteries produced worldwide."</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-bar">
+            <div class="tl-dot-outer"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-body">
+            <strong>Semi-solid enters production</strong>
+            <span>NIO delivers 577-mile semi-solid battery pack. Mercedes 749-mile prototype verified. Rimac/ProLogium unveil 6.5-minute charge pack. China dominates — over 1 in 3 EVs built in 2025 have a CATL battery.</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2026</div>
+          <div class="tl-bar">
+            <div class="tl-dot-outer"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-body">
+            <strong>Pilot fleets and demo vehicles</strong>
+            <span>Stellantis tests Dodge Charger Daytona SSB fleet. Changan begins trial installations. GBT launches first mass-producible all-solid-state cell. Volume production still limited.</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2027–28</div>
+          <div class="tl-bar">
+            <div class="tl-dot-outer"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-body">
+            <strong>First small-series SSB production cars</strong>
+            <span>Toyota, CATL, and others target prototype SSBs at ~400 Wh/kg. ProLogium gigafactory in France begins construction. First consumer models with true solid-state batteries reach select markets.</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2030</div>
+          <div class="tl-bar">
+            <div class="tl-dot-outer"></div>
+          </div>
+          <div class="tl-body">
+            <strong>Mass-market SSB EVs</strong>
+            <span>40% of global EV battery production projected to be solid-state. 500 Wh/kg cells enable 1,000+ km range and sub-10 minute charges. Range anxiety becomes a historical footnote.</span>
+          </div>
+        </div>
+      </div>
+      <div class="callout">
+        <span class="callout-label">China's Dominance</span>More than one in three EVs produced globally in 2025 used a CATL battery. China overtook Japan as the country with the most global auto sales. Chinese companies — GBT, Changan, Chery, NIO — are setting the pace on solid-state development. Western automakers are catching up, but the supply chain and manufacturing expertise currently sits overwhelmingly in China, a geopolitical reality that the US and EU are scrambling to address.
+      </div>
+      <h2>The Remaining Hurdles</h2>
+      <p>For all the progress, solid-state batteries face genuine unsolved problems. The biggest is the solid-solid interface: unlike liquid electrolytes that wet every surface, solids only contact electrodes at small patches, raising internal resistance. Many labs are engineering ultra-thin coatings to improve contact. A second challenge is dendrite growth — tiny lithium whiskers that can form and pierce even solid electrolytes, causing short circuits.</p>
+      <p>Manufacturing at scale is also unproven. Building these batteries in high volumes, with consistent quality, at a cost that makes EVs affordable — these are engineering and logistics challenges that have not yet been solved outside of pilot lines. Costs are expected to remain elevated through 2027 before falling as production scales.</p>
+      <p>None of this diminishes what is happening. The solid-state EV battery is transitioning from perpetual "coming soon" to actual product. The question is no longer whether it will arrive — it is how fast. And for anyone who has ever watched a charging indicator crawl toward 80%, that answer cannot come soon enough.</p>
+      <div class="author-note">Sources: InsideEVs, MIT Technology Review, Electrek, Cars.com, Motor24 — April 2026.</div>
+    </article>
+    <div class="footer-container">
+      <div class="social-icons">
+        <div class="icon">
+          <a href="https://www.instagram.com/_h.a.r.v.i.c_/" target="_blank" class="social-link">
+            <i class='fab fa-instagram'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.threads.net/@_h.a.r.v.i.c_" target="_blank" class="social-link">
+            <i class='fab fa-threads'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.facebook.com/harvic.john/" target="_blank" class="social-link">
+            <i class='fab fa-facebook'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.youtube.com/@harvicjohn" target="_blank" class="social-link">
+            <i class='fab fa-youtube'></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-quote">Remember! Coding is poetry written in pure logic.</div>
+      <div style="color:#fff;">©2026 TechHub - ALL RIGHTS RESERVED</div>
+    </div>
+    <div id="customAlert" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <p id="modalMessage">Service not available at the moment.</p>
+        <button onclick="closeModal()" class="modal-btn">OK</button>
+      </div>
+    </div>
+    <script>
+      function showAlert() {
+        document.getElementById('customAlert').style.display = 'flex';
+      }
+
+      function closeModal() {
+        document.getElementById('customAlert').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

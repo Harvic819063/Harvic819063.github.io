@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="theme-color" content="#050505">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>The Age of Agentic AI - TechHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      body {
+        background-color: #050505;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+      }
+
+      article {
+        background-color: #050505;
+        max-width: 900px;
+        width: 100%;
+        padding: 40px;
+        color: #f8f9fa;
+      }
+
+      h1 {
+        color: #f8f9fa;
+        font-size: 45px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0 30px 0;
+        font-size: 14px;
+        color: #FF7B00;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .article-avatar {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #FF7B00, #FF5500);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #050505;
+        font-weight: bold;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      h2 {
+        color: #FF7B00;
+        font-size: 1.8em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #FF7B00;
+        letter-spacing: 1px;
+      }
+
+      p {
+        color: #f8f9fa;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+
+      .pull-quote {
+        font-size: 1.3em;
+        font-style: italic;
+        color: #FFB84D;
+        margin: 30px 0;
+        padding: 20px;
+        border-left: 4px solid #FF7B00;
+        background-color: #1a1a1a;
+        border-radius: 4px;
+      }
+
+      em {
+        color: #FF7B00;
+        font-style: italic;
+      }
+
+      strong {
+        color: #FFB84D;
+        font-weight: bold;
+      }
+
+      .author-note {
+        font-size: 0.9em;
+        color: #7f8c8d;
+        text-align: center;
+        margin-top: 50px;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #FF7B00;
+      }
+
+      a:hover {
+        color: #FFB84D !important;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+        max-width: 1400px;
+      }
+
+      .home-btn {
+        background-color: #2b2d31;
+        color: #FF7B00;
+        border: 2px solid #FF7B00;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .auth-link {
+        flex: 1;
+      }
+
+      .auth-btn {
+        background-color: #2b2d31;
+        color: #f8f9fa;
+        border: 2px solid #FF7B00;
+        padding: 8px 20px;
+        font-size: 14px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .auth-btn.user {
+        border-radius: 50px;
+      }
+
+      .user-icon {
+        color: #FF7B00;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease;
+        filter: brightness(1.2);
+      }
+
+      .logo-container {
+        font-size: 90px;
+        font-weight: bold;
+        letter-spacing: -5px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-tech {
+        color: #FFFFFF;
+      }
+
+      .logo-hub {
+        background-color: #FF7B00;
+        color: #050505;
+        margin-left: 5px;
+        padding: 2px 15px;
+        border-radius: 36px;
+      }
+
+      .section-title {
+        font-size: 24px;
+        text-align: center;
+        padding: 7.5px;
+        display: flex;
+        justify-content: center;
+        border-left: 3px solid #FF7B00;
+        border-bottom: 3px solid #FF7B00;
+        margin-bottom: 30px;
+        border-radius: 24px;
+      }
+
+      .section-title strong {
+        color: #FFFFFF;
+      }
+
+      /* ── CALLOUT BOX ── */
+      .callout {
+        background-color: #0f0f0f;
+        border: 1px solid #333;
+        border-left: 4px solid #FF7B00;
+        border-radius: 4px;
+        padding: 18px 22px;
+        margin: 28px 0;
+        color: #aaaaaa;
+        font-size: 0.95em;
+        line-height: 1.7;
+      }
+
+      .callout .callout-label {
+        display: block;
+        font-size: 0.7em;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #FF7B00;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      /* ── STAT ROW ── */
+      .stat-row {
+        display: flex;
+        gap: 16px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      .stat-box {
+        flex: 1;
+        min-width: 140px;
+        background: #111;
+        border: 1px solid #2a2a2a;
+        border-top: 3px solid #FF7B00;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .stat-box .num {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #FF7B00;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .stat-box .desc {
+        font-size: 0.72rem;
+        color: #666;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        line-height: 1.4;
+      }
+
+      /* ── TIMELINE ── */
+      .timeline { margin: 30px 0; }
+
+      .tl-item {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+        align-items: flex-start;
+      }
+
+      .tl-year {
+        font-size: 0.72rem;
+        color: #FF7B00;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        min-width: 55px;
+        padding-top: 3px;
+      }
+
+      .tl-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+
+      .tl-dot-outer {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #FF7B00;
+        flex-shrink: 0;
+        margin-top: 4px;
+      }
+
+      .tl-line {
+        width: 2px;
+        flex: 1;
+        background: #2a2a2a;
+        min-height: 30px;
+      }
+
+      .tl-body {
+        padding-bottom: 10px;
+        flex: 1;
+      }
+
+      .tl-body strong {
+        display: block;
+        color: #f8f9fa;
+        margin-bottom: 4px;
+        font-size: 0.95rem;
+      }
+
+      .tl-body span {
+        font-size: 0.88rem;
+        color: #888;
+        line-height: 1.6;
+      }
+
+      .footer-container {
+        margin-top: 80px;
+        text-align: center;
+        width: 100%;
+        padding: 40px 0;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 20px;
+        font-size: 24px;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .icon {
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        transition: 0.25s;
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .icon:hover {
+        color: #FF7B00;
+        transform: translateY(-15px) scale(1.7);
+      }
+
+      .social-link {
+        color: #FF7B00;
+      }
+
+      .footer-quote {
+        border-bottom: 3px solid #FF7B00;
+        border-radius: 24px;
+        padding: 15px;
+        color: #ffffff;
+        max-width: 400px;
+        margin: 0 auto 40px;
+      }
+
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000b3;
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: #2b2d31;
+        border: 1px solid #FF7B00;
+        padding: 20px;
+        border-radius: 12px;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 10px 30px #00000080;
+        color: white;
+      }
+
+      .modal-header {
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        background: #707070;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 4px;
+      }
+
+      .modal-btn {
+        margin-top: 20px;
+        border: 2px solid #ff7B00;
+        background: #2b2d31;
+        padding: 8px 30px;
+        border-radius: 24px;
+        color: #f8f9fa;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .modal-btn:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease;
+        filter: brightness(1.2);
+      }
+
+      @media (max-width: 768px) {
+        .navbar { margin-bottom: 30px; }
+        .logo-container { font-size: 60px; margin-bottom: 20px; }
+        article { padding: 20px; }
+        h1 { font-size: 32px; }
+        h2 { font-size: 1.4em; }
+        p { font-size: 1em; }
+        .stat-row { flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <a href="https://harvic819063.github.io">
+        <button class="home-btn">
+          <i class="fa-solid fa-house"></i>
+        </button>
+      </a>
+      <div class="auth-buttons">
+        <a href="About Me.html" target="_blank" class="auth-link">
+          <button class="auth-btn user">
+            <i class="fa-solid fa-user user-icon"></i>
+          </button>
+        </a>
+        <button class="auth-btn" onclick="showAlert()">Login</button>
+        <button class="auth-btn" onclick="showAlert()">Signup</button>
+      </div>
+    </div>
+
+    <!-- LOGO -->
+    <div class="logo-container">
+      <span class="logo-tech">Tech</span>
+      <span class="logo-hub">Hub</span>
+    </div>
+
+    <!-- SECTION TITLE -->
+    <div class="section-title">
+      <strong>The Age of Agentic AI.</strong>
+    </div>
+
+    <!-- ARTICLE -->
+    <article>
+      <h1>The Age of <span style="color: #FF7B00;">Agentic</span> AI</h1>
+
+      <div class="article-meta">
+        <div class="article-avatar">H</div>
+        <span>HARVICJOHN</span>
+        <span>—</span>
+        <span>10 MIN READ</span>
+        <span>—</span>
+        <span>APRIL 16, 2026</span>
+      </div>
+
+      <p>
+        For the past three years, the world has been captivated by AI that <em>answers</em>. You type a question, it responds. You ask for a poem, it writes one. The interaction is clean, bounded, transactional. But that era is quietly ending — and what is replacing it is far more consequential. We are entering the age of AI that <em>acts</em>.
+      </p>
+
+      <p>
+        Agentic AI refers to systems that don't merely respond to prompts but pursue goals autonomously — planning sequences of actions, using tools, browsing the web, writing and executing code, managing files, and coordinating with other AI agents. These systems don't wait to be asked for each step. They figure out the steps themselves.
+      </p>
+
+      <!-- STATS -->
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num">$47B</div>
+          <div class="desc">AI agent market projected by 2030</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">10×</div>
+          <div class="desc">tasks completed vs single-prompt AI</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">40%</div>
+          <div class="desc">of enterprises deploying agents in 2026</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">2023</div>
+          <div class="desc">year the agentic shift quietly began</div>
+        </div>
+      </div>
+
+      <h2>What "Agentic" Actually Means</h2>
+
+      <p>
+        The word <em>agent</em> has a precise technical definition: an entity that perceives its environment and takes actions to achieve a goal. Classical AI agents go back decades — chess engines, game-playing bots, self-driving car planners. But those were narrow. They had one job, one environment, one fixed set of possible moves.
+      </p>
+
+      <p>
+        Modern agentic AI is different. Built on large language models, these systems can reason in natural language, adapt to novel situations, and operate across open-ended environments — the file system, the web, APIs, databases, terminals. They can be given a goal like <strong>"research competitors and draft a report"</strong> or <strong>"fix all failing tests in this codebase"</strong> and pursue that goal through dozens of intermediate steps, making decisions along the way.
+      </p>
+
+      <div class="pull-quote">
+        "We are not building tools anymore. We are building colleagues — systems that plan, decide, and act on your behalf while you sleep."
+      </div>
+
+      <p>
+        The key ingredients that make this possible are: a capable reasoning model, access to <strong>tools</strong> (web search, code execution, file I/O, API calls), a <strong>memory system</strong> for maintaining context across steps, and a <strong>planning loop</strong> that lets the model decide what to do next based on what it has already done. Put those together, and you get something that looks less like a chatbot and more like a junior employee who never sleeps and never gets bored.
+      </p>
+
+      <h2>How We Got Here</h2>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2022</div>
+          <div class="tl-bar"><div class="tl-dot-outer"></div><div class="tl-line"></div></div>
+          <div class="tl-body">
+            <strong>The Prompt Era Begins</strong>
+            <span>ChatGPT launches. The world discovers that language models can reason, write, and explain. The interaction model: one prompt, one response.</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2023</div>
+          <div class="tl-bar"><div class="tl-dot-outer"></div><div class="tl-line"></div></div>
+          <div class="tl-body">
+            <strong>Tools and Function Calling</strong>
+            <span>OpenAI introduces function calling. Models can now invoke code, search the web, query databases. The agent loop becomes technically feasible.</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024</div>
+          <div class="tl-bar"><div class="tl-dot-outer"></div><div class="tl-line"></div></div>
+          <div class="tl-body">
+            <strong>Early Agents Emerge</strong>
+            <span>AutoGPT, Devin, and early coding agents demonstrate multi-step task completion. Results are inconsistent, but the architecture is proven. Enterprises start paying attention.</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div class="tl-bar"><div class="tl-dot-outer"></div><div class="tl-line"></div></div>
+          <div class="tl-body">
+            <strong>Reliability Crosses the Threshold</strong>
+            <span>Improved reasoning models make agents reliable enough for production. Claude, GPT-4o, and Gemini are deployed in agentic pipelines at major enterprises. Claude Code ships.</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2026</div>
+          <div class="tl-bar"><div class="tl-dot-outer"></div></div>
+          <div class="tl-body">
+            <strong>The Agentic Mainstream</strong>
+            <span>Agents handle end-to-end workflows: software development, research, customer service, data analysis. The question is no longer "can it do this?" but "how much do we trust it?"</span>
+          </div>
+        </div>
+      </div>
+
+      <h2>The Architecture Under the Hood</h2>
+
+      <p>
+        Most modern AI agents follow a pattern called the <strong>ReAct loop</strong> — short for Reason and Act. The model is given a goal, a set of available tools, and the history of what has happened so far. It then outputs a thought (its reasoning), an action (a tool to call), and waits for the result. The result is fed back in, and the loop continues until the goal is achieved or the model determines it cannot proceed.
+      </p>
+
+      <p>
+        What makes this powerful is that the reasoning is done in natural language, which means the model can flexibly interpret results, recover from errors, and adapt its plan mid-execution. If a web search returns unexpected results, the model can re-interpret them. If a piece of code throws an error, the model can read the stack trace and try a different approach.
+      </p>
+
+      <div class="callout">
+        <span class="callout-label">Technical Note</span>
+        Multi-agent systems take this further: one "orchestrator" agent breaks a task into sub-tasks and assigns them to specialized "worker" agents — one for web research, one for coding, one for writing. The orchestrator aggregates their outputs. This mirrors how real teams are structured, and it scales to tasks of arbitrary complexity.
+      </div>
+
+      <h2>What It Changes — And What It Threatens</h2>
+
+      <p>
+        The optimistic framing is productivity. A single engineer with an AI coding agent can do the work of several. A solo researcher with an AI web agent can synthesize information that would have taken a team weeks. The leverage is real, and it is already being felt across software development, legal research, financial analysis, and scientific literature review.
+      </p>
+
+      <p>
+        The uncomfortable framing is displacement. The jobs most at risk from agentic AI are not manual jobs — they are knowledge worker jobs that consist largely of information gathering, synthesis, and structured decision-making. Paralegal work, junior software engineering, market research, customer support triage. These are not low-skill roles. They are the entry points to entire career ladders.
+      </p>
+
+      <div class="pull-quote">
+        "Agentic AI doesn't just automate tasks. It automates the learning process — the junior work through which humans build expertise. That is a different kind of disruption."
+      </div>
+
+      <p>
+        This isn't a call for panic. It is a call for clarity. The technology does not care about our organizational structures or our career expectations. It will be deployed wherever it creates economic value. The question societies face is not whether this happens, but how fast, and with what guardrails.
+      </p>
+
+      <h2>The Trust Problem</h2>
+
+      <p>
+        The single biggest unsolved problem in agentic AI is not capability — it is <em>trust</em>. When an AI agent has the ability to send emails, execute code, make purchases, or modify files on your behalf, the consequences of errors and hallucinations are no longer confined to a text box. They propagate into the real world.
+      </p>
+
+      <p>
+        The field is developing a spectrum of solutions. <strong>Human-in-the-loop</strong> designs pause the agent before any irreversible action and request confirmation. <strong>Sandboxed execution environments</strong> limit what the agent can touch. <strong>Audit trails</strong> log every action taken, every tool called, every decision made. And ongoing research into <em>interpretability</em> — understanding why a model produces a given output — aims to make agent behavior more predictable in the first place.
+      </p>
+
+      <div class="callout">
+        <span class="callout-label">Key Principle</span>
+        The best agentic systems today are designed with a concept called "minimal footprint" — taking the least powerful action available to achieve a goal, requesting only the permissions actually needed, and preferring reversible actions over irreversible ones whenever possible.
+      </div>
+
+      <h2>What Comes Next</h2>
+
+      <p>
+        The trajectory is clear. Models will get more capable. Context windows will grow, allowing agents to hold more of a task in memory at once. Tool ecosystems will mature, connecting agents to more of the digital infrastructure we use daily. Multi-agent coordination will become standard.
+      </p>
+
+      <p>
+        The more interesting question is what happens to software itself. If an AI agent can read documentation, write code, test it, debug it, and deploy it — does software development look the same in five years? If an agent can research a topic, interview sources, fact-check claims, and structure a narrative — does journalism? If an agent can review legal precedent, draft contracts, and flag risk — does law?
+      </p>
+
+      <p>
+        The answer, almost certainly, is no. Not because humans disappear from these fields, but because the definition of the work changes. The leverage shifts to judgment, taste, ethics, and the ability to ask the right questions — skills that, for now, remain stubbornly human.
+      </p>
+
+      <p>
+        The age of AI that answers is not over. But it is no longer the frontier. The frontier is AI that <em>acts</em> — and learning how to work alongside it, direct it, and constrain it wisely is the defining technical and social challenge of the next decade.
+      </p>
+
+      <div class="author-note">
+        This article reflects developments in AI through April 2026. The field moves quickly — some details will have evolved by the time you read this.
+      </div>
+    </article>
+
+    <!-- FOOTER -->
+    <div class="footer-container">
+      <div class="social-icons">
+        <div class="icon">
+          <a href="https://www.instagram.com/_h.a.r.v.i.c_/" target="_blank" class="social-link">
+            <i class='fab fa-instagram'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.threads.net/@_h.a.r.v.i.c_" target="_blank" class="social-link">
+            <i class='fab fa-threads'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.facebook.com/harvic.john/" target="_blank" class="social-link">
+            <i class='fab fa-facebook'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.youtube.com/@harvicjohn" target="_blank" class="social-link">
+            <i class='fab fa-youtube'></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-quote">Remember! Coding is poetry written in pure logic.</div>
+      <div style="color: #ffffff;">©2026 TechHub - ALL RIGHTS RESERVED</div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="customAlert" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <p id="modalMessage">Service not available at the moment.</p>
+        <button onclick="closeModal()" class="modal-btn">OK</button>
+      </div>
+    </div>
+
+    <script>
+      function showAlert() {
+        document.getElementById('customAlert').style.display = 'flex';
+      }
+      function closeModal() {
+        document.getElementById('customAlert').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

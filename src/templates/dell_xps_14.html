@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      body {
+        background: #050505;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+      }
+
+      article {
+        background: #050505;
+        max-width: 900px;
+        width: 100%;
+        padding: 40px;
+        color: #f8f9fa;
+      }
+
+      h1 {
+        color: #f8f9fa;
+        font-size: 45px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0 30px;
+        font-size: 14px;
+        color: #FF7B00;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .article-avatar {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #FF7B00, #FF5500);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #050505;
+        font-weight: bold;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      h2 {
+        color: #FF7B00;
+        font-size: 1.8em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #FF7B00;
+        letter-spacing: 1px;
+      }
+
+      p {
+        color: #f8f9fa;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+
+      .pull-quote {
+        font-size: 1.3em;
+        font-style: italic;
+        color: #FFB84D;
+        margin: 30px 0;
+        padding: 20px;
+        border-left: 4px solid #FF7B00;
+        background: #1a1a1a;
+        border-radius: 4px;
+      }
+
+      em {
+        color: #FF7B00;
+        font-style: italic;
+      }
+
+      strong {
+        color: #FFB84D;
+        font-weight: bold;
+      }
+
+      a {
+        text-decoration: none;
+        color: #FF7B00;
+      }
+
+      a:hover {
+        color: #FFB84D !important;
+      }
+
+      .author-note {
+        font-size: .9em;
+        color: #7f8c8d;
+        text-align: center;
+        margin-top: 50px;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+        max-width: 1400px;
+      }
+
+      .home-btn {
+        background: #2b2d31;
+        color: #FF7B00;
+        border: 2px solid #FF7B00;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .auth-link {
+        flex: 1;
+      }
+
+      .auth-btn {
+        background: #2b2d31;
+        color: #f8f9fa;
+        border: 2px solid #FF7B00;
+        padding: 8px 20px;
+        font-size: 14px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .auth-btn.user {
+        border-radius: 50px;
+      }
+
+      .user-icon {
+        color: #FF7B00;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        transition: .3s ease;
+        filter: brightness(1.2);
+      }
+
+      .logo-container {
+        font-size: 90px;
+        font-weight: bold;
+        letter-spacing: -5px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-tech {
+        color: #FFFFFF;
+      }
+
+      .logo-hub {
+        background: #FF7B00;
+        color: #050505;
+        margin-left: 5px;
+        padding: 2px 15px;
+        border-radius: 36px;
+      }
+
+      .section-title {
+        font-size: 24px;
+        text-align: center;
+        padding: 7.5px;
+        display: flex;
+        justify-content: center;
+        border-left: 3px solid #FF7B00;
+        border-bottom: 3px solid #FF7B00;
+        margin-bottom: 30px;
+        border-radius: 24px;
+      }
+
+      .section-title strong {
+        color: #FFFFFF;
+      }
+
+      .stat-row {
+        display: flex;
+        gap: 16px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      .stat-box {
+        flex: 1;
+        min-width: 130px;
+        background: #111;
+        border: 1px solid #2a2a2a;
+        border-top: 3px solid #FF7B00;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .stat-box .num {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #FF7B00;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .stat-box .desc {
+        font-size: .72rem;
+        color: #666;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        line-height: 1.4;
+      }
+
+      .callout {
+        background: #0f0f0f;
+        border: 1px solid #333;
+        border-left: 4px solid #FF7B00;
+        border-radius: 4px;
+        padding: 18px 22px;
+        margin: 28px 0;
+        color: #aaa;
+        font-size: .95em;
+        line-height: 1.7;
+      }
+
+      .callout .callout-label {
+        display: block;
+        font-size: .7em;
+        letter-spacing: .25em;
+        text-transform: uppercase;
+        color: #FF7B00;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      .score-row {
+        display: flex;
+        gap: 10px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+      }
+
+      .score-box {
+        flex: 1;
+        min-width: 100px;
+        background: #111;
+        border: 1px solid #2a2a2a;
+        padding: 12px;
+        text-align: center;
+      }
+
+      .score-box .s {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #FF7B00;
+        line-height: 1;
+      }
+
+      .score-box .l {
+        font-size: .65rem;
+        color: #555;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        margin-top: 4px;
+      }
+
+      .verdict {
+        background: #111;
+        border: 2px solid #FF7B00;
+        padding: 20px 24px;
+        margin: 28px 0;
+      }
+
+      .verdict .v-label {
+        font-size: .65rem;
+        letter-spacing: .25em;
+        text-transform: uppercase;
+        color: #FF7B00;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .verdict p {
+        color: #f8f9fa;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0;
+        font-size: .88rem;
+      }
+
+      .compare-table th {
+        background: #1a1a1a;
+        color: #FF7B00;
+        padding: 10px 14px;
+        text-align: left;
+        font-size: .72rem;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        border-bottom: 2px solid #FF7B00;
+      }
+
+      .compare-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #222;
+        color: #aaa;
+        vertical-align: top;
+      }
+
+      .compare-table tr:hover td {
+        background: #0f0f0f;
+      }
+
+      .yes {
+        color: #4caf7d;
+        font-weight: bold;
+      }
+
+      .no {
+        color: #d13f2a;
+        font-weight: bold;
+      }
+
+      .ok {
+        color: #c98b24;
+        font-weight: bold;
+      }
+
+      .pros-cons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 24px 0;
+      }
+
+      .pros,
+      .cons {
+        background: #111;
+        border: 1px solid #2a2a2a;
+        padding: 16px;
+      }
+
+      .pros h4 {
+        color: #4caf7d;
+        font-size: .75rem;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .cons h4 {
+        color: #d13f2a;
+        font-size: .75rem;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .pros ul,
+      .cons ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .pros li,
+      .cons li {
+        font-size: .85rem;
+        color: #888;
+        padding: 5px 0;
+        border-bottom: 1px solid #1a1a1a;
+        line-height: 1.5;
+      }
+
+      .pros li:last-child,
+      .cons li:last-child {
+        border: none;
+      }
+
+      .pros li::before {
+        content: '+ ';
+        color: #4caf7d;
+      }
+
+      .cons li::before {
+        content: '- ';
+        color: #d13f2a;
+      }
+
+      .footer-container {
+        margin-top: 80px;
+        text-align: center;
+        width: 100%;
+        padding: 40px 0;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 20px;
+        font-size: 24px;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .icon {
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        transition: .25s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .icon:hover {
+        color: #FF7B00;
+        transform: translateY(-15px) scale(1.7);
+      }
+
+      .social-link {
+        color: #FF7B00;
+      }
+
+      .footer-quote {
+        border-bottom: 3px solid #FF7B00;
+        border-radius: 24px;
+        padding: 15px;
+        color: #fff;
+        max-width: 400px;
+        margin: 0 auto 40px;
+      }
+
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000b3;
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: #2b2d31;
+        border: 1px solid #FF7B00;
+        padding: 20px;
+        border-radius: 12px;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 10px 30px #00000080;
+        color: white;
+      }
+
+      .modal-header {
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        background: #707070;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 4px;
+      }
+
+      .modal-btn {
+        margin-top: 20px;
+        border: 2px solid #ff7B00;
+        background: #2b2d31;
+        padding: 8px 30px;
+        border-radius: 24px;
+        color: #f8f9fa;
+        cursor: pointer;
+      }
+
+      .modal-btn:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+
+      @media(max-width:768px) {
+        .navbar {
+          margin-bottom: 30px;
+        }
+
+        .logo-container {
+          font-size: 60px;
+          margin-bottom: 20px;
+        }
+
+        article {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        h2 {
+          font-size: 1.4em;
+        }
+
+        p {
+          font-size: 1em;
+        }
+
+        .stat-row {
+          flex-direction: column;
+        }
+
+        .pros-cons {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <title>Dell XPS 14 & 16 Review 2026 - TechHub</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="https://techhub.harvic005.workers.dev/">
+        <button class="home-btn">
+          <i class="fa-solid fa-house"></i>
+        </button>
+      </a>
+      <div class="auth-buttons">
+        <a href="About Me.html" target="_blank" class="auth-link">
+          <button class="auth-btn user">
+            <i class="fa-solid fa-user user-icon"></i>
+          </button>
+        </a>
+        <button class="auth-btn" onclick="showAlert()">Login</button>
+        <button class="auth-btn" onclick="showAlert()">Signup</button>
+      </div>
+    </div>
+    <div class="logo-container">
+      <span class="logo-tech">Tech</span>
+      <span class="logo-hub">Hub</span>
+    </div>
+    <div class="section-title">
+      <strong>Dell XPS 14 & 16 (2026) Review.</strong>
+    </div>
+    <article>
+      <h1>Dell XPS Is <span style="color:#FF7B00;">Back</span> — And It's Brilliant </h1>
+      <div class="article-meta">
+        <div class="article-avatar">H</div>
+        <span>HARVICJOHN</span>
+        <span>—</span>
+        <span>8 MIN READ</span>
+        <span>—</span>
+        <span>APRIL 18, 2026</span>
+      </div>
+      <p>Dell spent the better part of three years losing the plot on its flagship XPS line. The 2024 and 2025 models stripped out function keys, hid the trackpad, and delivered a laptop that felt like it was designed by committee to frustrate the people actually using it. The 2026 XPS 14 and XPS 16 are a course correction so complete it feels like a different company made them.</p>
+      <p>Physical function keys are back. The trackpad is visible. The CNC-machined aluminium chassis has rounded corners and a weight the XPS line hasn't achieved in years — the XPS 16 is lighter than its predecessor despite a larger battery. And the headline number that has reviewers floored: the XPS 14 with its base 1920×1200 LCD display and a 1Hz variable refresh rate lasted <strong>20 hours and 41 minutes</strong> in Tom's Hardware battery testing. Dell's own internal reports show 43+ hour results in browser use. That is not a typo. </p>
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num">43hr</div>
+          <div class="desc">XPS 14 battery life (browser, 1Hz display)</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">3lbs</div>
+          <div class="desc">XPS 14 weight with new chassis</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">OLED</div>
+          <div class="desc">16-inch tandem 2880x1800 display option</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">,749</div>
+          <div class="desc">XPS 16 starting price</div>
+        </div>
+      </div>
+      <h2>The 1Hz Display Trick</h2>
+      <p>The battery life story begins with the display. Dell equipped the base XPS 14 with a 1920×1200 LCD featuring a variable refresh rate that drops all the way to 1Hz when content is static — a rate so slow it essentially turns the display into an e-ink screen between redraws. The power saving is dramatic. During document editing or reading, the display draws almost nothing. It refreshes normally the moment you start scrolling or typing. The result is a Windows laptop that competes with Apple silicon on battery life — something that seemed impossible 18 months ago.</p>
+      <p>The premium OLED tandem display option on both models is stunning — 2880×1800 on the 16-inch with true black levels, HDR support, and Arc B390 integrated graphics for better GPU headroom. This is the configuration power users want. The base LCD is the configuration commuters want. Both are excellent at what they do.</p>
+      <div class="pull-quote">"The Dell XPS 16 is a brilliant return to form — one of the best Windows laptops ever reviewed. It's hard to knock a laptop that gets so much right." — Tom's Guide</div>
+      <h2>Intel Panther Lake Performance</h2>
+      <p>Both the XPS 14 and XPS 16 run Intel's Panther Lake processors — Intel's latest generation built on the 18A process node. Performance across CPU benchmarks is competitive with AMD's best mobile chips and edges closer to Apple M-series performance in multi-core workloads than any previous Intel generation. The Arc B390 integrated GPU in the higher-tier models handles 1080p gaming at medium settings, light 4K video editing, and AI inference tasks without requiring a discrete GPU.</p>
+      <div class="compare-table" style="font-size:.85rem;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Battery</th>
+              <th>Display</th>
+              <th>Price</th>
+              <th>Best For</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>XPS 14 (LCD)</strong>
+              </td>
+              <td class="yes">43 hrs</td>
+              <td>1920×1200 1Hz VRR</td>
+              <td>,299</td>
+              <td>All-day commuters</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>XPS 14 (OLED)</strong>
+              </td>
+              <td class="ok">12 hrs</td>
+              <td>OLED Tandem, Arc GPU</td>
+              <td>,799</td>
+              <td>Creative professionals</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>XPS 16</strong>
+              </td>
+              <td class="yes">18 hrs</td>
+              <td>OLED 2880×1800 16"</td>
+              <td>,749+</td>
+              <td>Power users, creators</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2>The Keyboard Issue</h2>
+      <p>Function keys are back — thank goodness — but the keyboard still has low travel without space between keys. Multiple reviewers report an adjustment period before muscle memory catches up. It is not a dealbreaker, but it is the one legitimate criticism of an otherwise exceptional machine. Anyone upgrading from an older XPS with the traditional keyboard should budget a week of relearning.</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Strengths</h4>
+          <ul>
+            <li>Industry-leading battery life (LCD model)</li>
+            <li>Gorgeous OLED tandem display option</li>
+            <li>Function keys and trackpad are back</li>
+            <li>Lighter than predecessor despite bigger battery</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Weaknesses</h4>
+          <ul>
+            <li>Low-travel keyboard needs adjustment period</li>
+            <li>XPS 16 dropped SD card slot</li>
+            <li>Starting price has crept up significantly</li>
+            <li>OLED model battery life is merely good, not exceptional</li>
+          </ul>
+        </div>
+      </div>
+      <div class="verdict">
+        <span class="v-label">Final Verdict</span>
+        <p>The 2026 XPS 14 and 16 are the Windows laptops Dell should have been making all along. If you want MacBook-level battery life on Windows, the XPS 14 LCD is the answer. If you want a stunning 16-inch display, the XPS 16 OLED is a genuine MacBook Pro rival.</p>
+      </div>
+      <div class="author-note">Sources: Tom's Guide, Tom's Hardware — April 2026.</div>
+    </article>
+    <div class="footer-container">
+      <div class="social-icons">
+        <div class="icon">
+          <a href="https://www.instagram.com/_h.a.r.v.i.c_/" target="_blank" class="social-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.threads.net/@_j.a.r.v.y_" target="_blank" class="social-link">
+            <i class="fab fa-threads"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.facebook.com/harvic.john/" target="_blank" class="social-link">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.youtube.com/@harvicjohn" target="_blank" class="social-link">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-quote">Remember! Coding is poetry written in pure logic.</div>
+      <div style="color:#fff;">©2026 TechHub - ALL RIGHTS RESERVED</div>
+    </div>
+    <div id="customAlert" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <p id="modalMessage">Service not available at the moment.</p>
+        <button onclick="closeModal()" class="modal-btn">OK</button>
+      </div>
+    </div>
+    <script>
+      function showAlert() {
+        document.getElementById("customAlert").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("customAlert").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

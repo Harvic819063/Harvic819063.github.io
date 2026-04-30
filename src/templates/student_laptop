@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      body {
+        background: #050505;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+      }
+
+      article {
+        background: #050505;
+        max-width: 900px;
+        width: 100%;
+        padding: 40px;
+        color: #f8f9fa;
+      }
+
+      h1 {
+        color: #f8f9fa;
+        font-size: 45px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0 30px;
+        font-size: 14px;
+        color: #FF7B00;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .article-avatar {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #FF7B00, #FF5500);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #050505;
+        font-weight: bold;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      h2 {
+        color: #FF7B00;
+        font-size: 1.8em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #FF7B00;
+        letter-spacing: 1px;
+      }
+
+      p {
+        color: #f8f9fa;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+
+      .pull-quote {
+        font-size: 1.3em;
+        font-style: italic;
+        color: #FFB84D;
+        margin: 30px 0;
+        padding: 20px;
+        border-left: 4px solid #FF7B00;
+        background: #1a1a1a;
+        border-radius: 4px;
+      }
+
+      em {
+        color: #FF7B00;
+        font-style: italic;
+      }
+
+      strong {
+        color: #FFB84D;
+        font-weight: bold;
+      }
+
+      a {
+        text-decoration: none;
+        color: #FF7B00;
+      }
+
+      a:hover {
+        color: #FFB84D !important;
+      }
+
+      .author-note {
+        font-size: .9em;
+        color: #7f8c8d;
+        text-align: center;
+        margin-top: 50px;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+        max-width: 1400px;
+      }
+
+      .home-btn {
+        background: #2b2d31;
+        color: #FF7B00;
+        border: 2px solid #FF7B00;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .auth-link {
+        flex: 1;
+      }
+
+      .auth-btn {
+        background: #2b2d31;
+        color: #f8f9fa;
+        border: 2px solid #FF7B00;
+        padding: 8px 20px;
+        font-size: 14px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .auth-btn.user {
+        border-radius: 50px;
+      }
+
+      .user-icon {
+        color: #FF7B00;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        transition: .3s ease;
+        filter: brightness(1.2);
+      }
+
+      .logo-container {
+        font-size: 90px;
+        font-weight: bold;
+        letter-spacing: -5px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-tech {
+        color: #FFFFFF;
+      }
+
+      .logo-hub {
+        background: #FF7B00;
+        color: #050505;
+        margin-left: 5px;
+        padding: 2px 15px;
+        border-radius: 36px;
+      }
+
+      .section-title {
+        font-size: 24px;
+        text-align: center;
+        padding: 7.5px;
+        display: flex;
+        justify-content: center;
+        border-left: 3px solid #FF7B00;
+        border-bottom: 3px solid #FF7B00;
+        margin-bottom: 30px;
+        border-radius: 24px;
+      }
+
+      .section-title strong {
+        color: #FFFFFF;
+      }
+
+      .stat-row {
+        display: flex;
+        gap: 16px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      .stat-box {
+        flex: 1;
+        min-width: 130px;
+        background: #111;
+        border: 1px solid #2a2a2a;
+        border-top: 3px solid #FF7B00;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .stat-box .num {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #FF7B00;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .stat-box .desc {
+        font-size: .72rem;
+        color: #666;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        line-height: 1.4;
+      }
+
+      .callout {
+        background: #0f0f0f;
+        border: 1px solid #333;
+        border-left: 4px solid #FF7B00;
+        border-radius: 4px;
+        padding: 18px 22px;
+        margin: 28px 0;
+        color: #aaa;
+        font-size: .95em;
+        line-height: 1.7;
+      }
+
+      .callout .callout-label {
+        display: block;
+        font-size: .7em;
+        letter-spacing: .25em;
+        text-transform: uppercase;
+        color: #FF7B00;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      .score-row {
+        display: flex;
+        gap: 10px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+      }
+
+      .score-box {
+        flex: 1;
+        min-width: 100px;
+        background: #111;
+        border: 1px solid #2a2a2a;
+        padding: 12px;
+        text-align: center;
+      }
+
+      .score-box .s {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #FF7B00;
+        line-height: 1;
+      }
+
+      .score-box .l {
+        font-size: .65rem;
+        color: #555;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        margin-top: 4px;
+      }
+
+      .verdict {
+        background: #111;
+        border: 2px solid #FF7B00;
+        padding: 20px 24px;
+        margin: 28px 0;
+      }
+
+      .verdict .v-label {
+        font-size: .65rem;
+        letter-spacing: .25em;
+        text-transform: uppercase;
+        color: #FF7B00;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      .verdict p {
+        color: #f8f9fa;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0;
+        font-size: .88rem;
+      }
+
+      .compare-table th {
+        background: #1a1a1a;
+        color: #FF7B00;
+        padding: 10px 14px;
+        text-align: left;
+        font-size: .72rem;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        border-bottom: 2px solid #FF7B00;
+      }
+
+      .compare-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #222;
+        color: #aaa;
+        vertical-align: top;
+      }
+
+      .compare-table tr:hover td {
+        background: #0f0f0f;
+      }
+
+      .yes {
+        color: #4caf7d;
+        font-weight: bold;
+      }
+
+      .no {
+        color: #d13f2a;
+        font-weight: bold;
+      }
+
+      .ok {
+        color: #c98b24;
+        font-weight: bold;
+      }
+
+      .pros-cons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 24px 0;
+      }
+
+      .pros,
+      .cons {
+        background: #111;
+        border: 1px solid #2a2a2a;
+        padding: 16px;
+      }
+
+      .pros h4 {
+        color: #4caf7d;
+        font-size: .75rem;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .cons h4 {
+        color: #d13f2a;
+        font-size: .75rem;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .pros ul,
+      .cons ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .pros li,
+      .cons li {
+        font-size: .85rem;
+        color: #888;
+        padding: 5px 0;
+        border-bottom: 1px solid #1a1a1a;
+        line-height: 1.5;
+      }
+
+      .pros li:last-child,
+      .cons li:last-child {
+        border: none;
+      }
+
+      .pros li::before {
+        content: '+ ';
+        color: #4caf7d;
+      }
+
+      .cons li::before {
+        content: '- ';
+        color: #d13f2a;
+      }
+
+      .footer-container {
+        margin-top: 80px;
+        text-align: center;
+        width: 100%;
+        padding: 40px 0;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 20px;
+        font-size: 24px;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .icon {
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        transition: .25s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .icon:hover {
+        color: #FF7B00;
+        transform: translateY(-15px) scale(1.7);
+      }
+
+      .social-link {
+        color: #FF7B00;
+      }
+
+      .footer-quote {
+        border-bottom: 3px solid #FF7B00;
+        border-radius: 24px;
+        padding: 15px;
+        color: #fff;
+        max-width: 400px;
+        margin: 0 auto 40px;
+      }
+
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000b3;
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: #2b2d31;
+        border: 1px solid #FF7B00;
+        padding: 20px;
+        border-radius: 12px;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 10px 30px #00000080;
+        color: white;
+      }
+
+      .modal-header {
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        background: #707070;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 4px;
+      }
+
+      .modal-btn {
+        margin-top: 20px;
+        border: 2px solid #ff7B00;
+        background: #2b2d31;
+        padding: 8px 30px;
+        border-radius: 24px;
+        color: #f8f9fa;
+        cursor: pointer;
+      }
+
+      .modal-btn:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+
+      @media(max-width:768px) {
+        .navbar {
+          margin-bottom: 30px;
+        }
+
+        .logo-container {
+          font-size: 60px;
+          margin-bottom: 20px;
+        }
+
+        article {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        h2 {
+          font-size: 1.4em;
+        }
+
+        p {
+          font-size: 1em;
+        }
+
+        .stat-row {
+          flex-direction: column;
+        }
+
+        .pros-cons {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <title>Best Laptops for Students 2026 - TechHub</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="https://harvic819063.github.io">
+        <button class="home-btn">
+          <i class="fa-solid fa-house"></i>
+        </button>
+      </a>
+      <div class="auth-buttons">
+        <a href="About Me.html" target="_blank" class="auth-link">
+          <button class="auth-btn user">
+            <i class="fa-solid fa-user user-icon"></i>
+          </button>
+        </a>
+        <button class="auth-btn" onclick="showAlert()">Login</button>
+        <button class="auth-btn" onclick="showAlert()">Signup</button>
+      </div>
+    </div>
+    <div class="logo-container">
+      <span class="logo-tech">Tech</span>
+      <span class="logo-hub">Hub</span>
+    </div>
+    <div class="section-title">
+      <strong>Best Laptops for Students 2026.</strong>
+    </div>
+    <article>
+      <h1>Best Laptops for <span style="color:#FF7B00;">Students</span> 2026 — Honest Picks at Every Budget </h1>
+      <div class="article-meta">
+        <div class="article-avatar">H</div>
+        <span>HARVICJOHN</span>
+        <span>—</span>
+        <span>10 MIN READ</span>
+        <span>—</span>
+        <span>APRIL 18, 2026</span>
+      </div>
+      <p>Buying a student laptop in 2026 is more complicated than it should be. The RAM shortage has pushed prices up across the board. Manufacturers are quietly shipping 8GB configurations in devices that should have 16GB. And the marketing of AI features on laptops — many of which require subscriptions to use meaningfully — has muddied what actually matters for coursework, note-taking, and research. This guide cuts through the noise and recommends only what actually delivers value for students, at budgets from 00 to ,000.</p>
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num">16GB</div>
+          <div class="desc">Minimum RAM to buy in 2026 — don't compromise</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">10hr+</div>
+          <div class="desc">Battery life target for all-day campus use</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">512GB</div>
+          <div class="desc">Minimum SSD — 1TB preferred for media/design</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">NVMe</div>
+          <div class="desc">SSD type required — avoid eMMC entirely</div>
+        </div>
+      </div>
+      <h2>Under 00: The Smart Choices</h2>
+      <div class="callout">
+        <span class="callout-label">Best Under 00 — Lenovo IdeaPad Slim 5 (~99)</span>AMD Ryzen 7, 16GB DDR5, 1TB PCIe Gen4 SSD. This is the student laptop recommendation for anyone without strong platform preferences. Battery life is solid, multitasking is smooth, and the 1TB drive handles a full academic year of project files without panic. The build is plastic but the internals are genuine. Skip any configuration with less than 16GB RAM.
+      </div>
+      <div class="callout">
+        <span class="callout-label">Best Chromebook — Lenovo Chromebook Plus 14 (49)</span>If your coursework lives in Google Workspace and your university's LMS runs in a browser, the Chromebook Plus 14 offers 16–19 hours of battery life and a stunning OLED display for 49. The fanless design is silent in lectures. For students who don't need Windows-specific software, this is outstanding value for the display and battery combination alone.
+      </div>
+      <h2>00–,200: The Sweet Spot</h2>
+      <div class="callout">
+        <span class="callout-label">Best Windows Mid-Range — Lenovo Yoga 9i 2-in-1 Aura (~,100)</span>PCWorld's best overall laptop of 2026. Intel Core Ultra 7, 32GB RAM, 1TB SSD, 14-inch 2880×1800 OLED touchscreen at 120Hz, stylus included, 23-hour battery. The 2-in-1 form factor is particularly useful for students — tablet mode for lecture note-taking with the stylus, laptop mode for writing assignments. The display quality at this price is exceptional.
+      </div>
+      <div class="callout">
+        <span class="callout-label">Best for Repairability — Framework Laptop 13 (~,099)</span>For engineering, computer science, or tech students who want to understand and control their hardware, the Framework 13 with AMD Ryzen AI 300 is the choice. Fully user-upgradeable. Modular ports. The lesson of the RAM shortage is that being able to upgrade your own hardware matters — Framework makes that possible.
+      </div>
+      <h2>,500+: If Your Parents Are Paying</h2>
+      <div class="callout">
+        <span class="callout-label">Best Premium — MacBook Pro 14-inch M5 (from ,999)</span>For STEM students running simulations, creative students doing video and audio production, or anyone in a Mac-dominant creative program, the M5 MacBook Pro 14 is the most powerful laptop per watt ever made. Up to 22 hours battery. Thunderbolt 5. 12MP camera that actually makes video calls look good. The price is real, but the longevity is also real — this laptop will not need replacement for 5+ years.
+      </div>
+      <div class="callout">
+        <span class="callout-label">Best for Design Students — ASUS ProArt P16 (~,999)</span>AMD Ryzen AI processor, RTX 50-series graphics, 16-inch 120Hz OLED. For architecture, industrial design, 3D modelling, or video production students who need GPU headroom the MacBook Pro can't provide, the ProArt P16 offers Windows flexibility, upgradeable storage, and genuine discrete GPU performance. Battery life is shorter than the MacBook, and the power brick is large. For the workload, the trade-off is worth it.
+      </div>
+      <h2>What Not to Buy</h2>
+      <p>Avoid: any laptop with <strong>8GB soldered RAM</strong> — this is the single biggest mistake students make in 2026. Avoid: <strong>eMMC storage</strong> — it will make any laptop feel slow within months. Avoid: gaming laptops as daily drivers unless gaming is genuinely your primary use case — the battery life (4–6 hours max) and fan noise make them miserable in lecture halls. Avoid: the cheapest Chromebooks under 00 — the OLED Lenovo at 49 is worth the premium for the display and longevity. </p>
+      <div class="compare-table">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Budget</th>
+              <th>Recommendation</th>
+              <th>Key Strength</th>
+              <th>Battery</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Under 00</strong>
+              </td>
+              <td>Lenovo IdeaPad Slim 5</td>
+              <td>16GB DDR5, 1TB SSD</td>
+              <td class="ok">8-10hr</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Under 50</strong>
+              </td>
+              <td>Lenovo Chromebook Plus 14</td>
+              <td>OLED + 16-19hr battery</td>
+              <td class="yes">16-19hr</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>~,100</strong>
+              </td>
+              <td>Lenovo Yoga 9i 2-in-1</td>
+              <td>OLED touch + stylus + 23hr</td>
+              <td class="yes">23hr</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>~,099</strong>
+              </td>
+              <td>Framework 13</td>
+              <td>Fully upgradeable</td>
+              <td class="ok">8-10hr</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>,999+</strong>
+              </td>
+              <td>MacBook Pro 14 M5</td>
+              <td>Best performance/watt</td>
+              <td class="yes">22hr</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>,999</strong>
+              </td>
+              <td>ASUS ProArt P16</td>
+              <td>Discrete GPU for design</td>
+              <td class="ok">6-9hr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="author-note">Sources: PCWorld, Tom's Hardware, SlashGear, TechTimes — April 2026.</div>
+    </article>
+    <div class="footer-container">
+      <div class="social-icons">
+        <div class="icon">
+          <a href="https://www.instagram.com/_h.a.r.v.i.c_/" target="_blank" class="social-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.threads.net/@_h.a.r.v.i.c_" target="_blank" class="social-link">
+            <i class="fab fa-threads"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.facebook.com/harvic.john/" target="_blank" class="social-link">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.youtube.com/@harvicjohn" target="_blank" class="social-link">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-quote">Remember! Coding is poetry written in pure logic.</div>
+      <div style="color:#fff;">©2026 TechHub - ALL RIGHTS RESERVED</div>
+    </div>
+    <div id="customAlert" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <p id="modalMessage">Service not available at the moment.</p>
+        <button onclick="closeModal()" class="modal-btn">OK</button>
+      </div>
+    </div>
+    <script>
+      function showAlert() {
+        document.getElementById("customAlert").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("customAlert").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

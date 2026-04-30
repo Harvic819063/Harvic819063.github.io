@@ -1,0 +1,618 @@
+<!-- ARTICLE 3: AI CYBERSECURITY -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>AI Is Hacking Back - TechHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      body {
+        background: #050505;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+      }
+
+      article {
+        background: #050505;
+        max-width: 900px;
+        width: 100%;
+        padding: 40px;
+        color: #f8f9fa;
+      }
+
+      h1 {
+        color: #f8f9fa;
+        font-size: 45px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 20px 0 30px;
+        font-size: 14px;
+        color: #FF7B00;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .article-avatar {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #FF7B00, #FF5500);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #050505;
+        font-weight: bold;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+
+      h2 {
+        color: #FF7B00;
+        font-size: 1.8em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #FF7B00;
+        letter-spacing: 1px;
+      }
+
+      p {
+        color: #f8f9fa;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+      }
+
+      .pull-quote {
+        font-size: 1.3em;
+        font-style: italic;
+        color: #FFB84D;
+        margin: 30px 0;
+        padding: 20px;
+        border-left: 4px solid #FF7B00;
+        background: #1a1a1a;
+        border-radius: 4px;
+      }
+
+      em {
+        color: #FF7B00;
+        font-style: italic;
+      }
+
+      strong {
+        color: #FFB84D;
+        font-weight: bold;
+      }
+
+      a {
+        text-decoration: none;
+        color: #FF7B00;
+      }
+
+      a:hover {
+        color: #FFB84D !important;
+      }
+
+      .author-note {
+        font-size: .9em;
+        color: #7f8c8d;
+        text-align: center;
+        margin-top: 50px;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+        max-width: 1400px;
+      }
+
+      .home-btn {
+        background: #2b2d31;
+        color: #FF7B00;
+        border: 2px solid #FF7B00;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .auth-link {
+        flex: 1;
+      }
+
+      .auth-btn {
+        background: #2b2d31;
+        color: #f8f9fa;
+        border: 2px solid #FF7B00;
+        padding: 8px 20px;
+        font-size: 14px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .auth-btn.user {
+        border-radius: 50px;
+      }
+
+      .user-icon {
+        color: #FF7B00;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        transition: .3s ease;
+        filter: brightness(1.2);
+      }
+
+      .logo-container {
+        font-size: 90px;
+        font-weight: bold;
+        letter-spacing: -5px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-tech {
+        color: #FFFFFF;
+      }
+
+      .logo-hub {
+        background: #FF7B00;
+        color: #050505;
+        margin-left: 5px;
+        padding: 2px 15px;
+        border-radius: 36px;
+      }
+
+      .section-title {
+        font-size: 24px;
+        text-align: center;
+        padding: 7.5px;
+        display: flex;
+        justify-content: center;
+        border-left: 3px solid #FF7B00;
+        border-bottom: 3px solid #FF7B00;
+        margin-bottom: 30px;
+        border-radius: 24px;
+      }
+
+      .section-title strong {
+        color: #FFFFFF;
+      }
+
+      .stat-row {
+        display: flex;
+        gap: 16px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      .stat-box {
+        flex: 1;
+        min-width: 140px;
+        background: #111;
+        border: 1px solid #2a2a2a;
+        border-top: 3px solid #FF7B00;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .stat-box .num {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #FF7B00;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .stat-box .desc {
+        font-size: .72rem;
+        color: #666;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        line-height: 1.4;
+      }
+
+      .callout {
+        background: #0f0f0f;
+        border: 1px solid #333;
+        border-left: 4px solid #FF7B00;
+        border-radius: 4px;
+        padding: 18px 22px;
+        margin: 28px 0;
+        color: #aaa;
+        font-size: .95em;
+        line-height: 1.7;
+      }
+
+      .callout .callout-label {
+        display: block;
+        font-size: .7em;
+        letter-spacing: .25em;
+        text-transform: uppercase;
+        color: #FF7B00;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      .threat-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0;
+        font-size: .88rem;
+      }
+
+      .threat-table th {
+        background: #1a1a1a;
+        color: #FF7B00;
+        padding: 10px 14px;
+        text-align: left;
+        font-size: .72rem;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        border-bottom: 2px solid #FF7B00;
+      }
+
+      .threat-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #222;
+        color: #aaa;
+        vertical-align: top;
+      }
+
+      .threat-table tr:hover td {
+        background: #0f0f0f;
+      }
+
+      .sev-high {
+        color: #d13f2a;
+        font-weight: bold;
+      }
+
+      .sev-med {
+        color: #c98b24;
+        font-weight: bold;
+      }
+
+      .sev-crit {
+        color: #ff3a1a;
+        font-weight: bold;
+      }
+
+      .footer-container {
+        margin-top: 80px;
+        text-align: center;
+        width: 100%;
+        padding: 40px 0;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 20px;
+        font-size: 24px;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .icon {
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        transition: .25s;
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .icon:hover {
+        color: #FF7B00;
+        transform: translateY(-15px) scale(1.7);
+      }
+
+      .social-link {
+        color: #FF7B00;
+      }
+
+      .footer-quote {
+        border-bottom: 3px solid #FF7B00;
+        border-radius: 24px;
+        padding: 15px;
+        color: #fff;
+        max-width: 400px;
+        margin: 0 auto 40px;
+      }
+
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000b3;
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: #2b2d31;
+        border: 1px solid #FF7B00;
+        padding: 20px;
+        border-radius: 12px;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 10px 30px #00000080;
+        color: white;
+      }
+
+      .modal-header {
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        background: #707070;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 4px;
+      }
+
+      .modal-btn {
+        margin-top: 20px;
+        border: 2px solid #ff7B00;
+        background: #2b2d31;
+        padding: 8px 30px;
+        border-radius: 24px;
+        color: #f8f9fa;
+        cursor: pointer;
+        transition: .3s;
+      }
+
+      .modal-btn:hover {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+      }
+
+      @media(max-width:768px) {
+        .navbar {
+          margin-bottom: 30px;
+        }
+
+        .logo-container {
+          font-size: 60px;
+          margin-bottom: 20px;
+        }
+
+        article {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        h2 {
+          font-size: 1.4em;
+        }
+
+        p {
+          font-size: 1em;
+        }
+
+        .stat-row {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="https://techhub.harvic005.workers.dev/">
+        <button class="home-btn">
+          <i class="fa-solid fa-house"></i>
+        </button>
+      </a>
+      <div class="auth-buttons">
+        <a href="About Me.html" target="_blank" class="auth-link">
+          <button class="auth-btn user">
+            <i class="fa-solid fa-user user-icon"></i>
+          </button>
+        </a>
+        <button class="auth-btn" onclick="showAlert()">Login</button>
+        <button class="auth-btn" onclick="showAlert()">Signup</button>
+      </div>
+    </div>
+    <div class="logo-container">
+      <span class="logo-tech">Tech</span>
+      <span class="logo-hub">Hub</span>
+    </div>
+    <div class="section-title">
+      <strong>AI Is Hacking Back.</strong>
+    </div>
+    <article>
+      <h1>AI Is <span style="color:#FF7B00;">Hacking Back</span>
+      </h1>
+      <div class="article-meta">
+        <div class="article-avatar">H</div>
+        <span>HARVICJOHN</span>
+        <span>—</span>
+        <span>10 MIN READ</span>
+        <span>—</span>
+        <span>APRIL 18, 2026</span>
+      </div>
+      <p>Cybersecurity has always been an arms race. Attackers find a technique, defenders build a countermeasure, attackers adapt. The cycle is as old as computer networks. But in 2025 and 2026, AI changed the fundamental economics of that race — and not in favor of defenders. For the first time, offensive capabilities are scaling faster than defensive ones, and the gap is widening.</p>
+      <p>The numbers are stark. AI-powered ransomware cut the median dwell time inside a compromised network from 9 days down to 5. Credential theft driven by AI jumped 160% in 2025. Attackers are now scanning networks at 36,000 probes per second using automated AI tools. And perhaps most unsettling: in 2025, AI agents discovered 41% of zero-day vulnerabilities before defenders had even identified them.</p>
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num">83%</div>
+          <div class="desc">of phishing emails now AI-generated</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">85%</div>
+          <div class="desc">of orgs experienced a deepfake incident in the past year</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">$4.4M</div>
+          <div class="desc">Average data breach cost in 2025</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">+160%</div>
+          <div class="desc">AI-driven credential theft YoY</div>
+        </div>
+      </div>
+      <h2>The Phishing Problem Is Now Unsolvable by Humans</h2>
+      <p>Phishing has historically been detectable by its tells: poor grammar, suspicious links, implausible scenarios. AI has eliminated every one of these tells. AI-generated phishing emails now achieve a <strong>78% open rate</strong> and a 21% click-through rate — nearly double the response rates of professionally written marketing emails. </p>
+      <p>The reason is straightforward. AI removes the human errors that made phishing detectable. The language reads naturally. The content references real events. The tone matches the person being impersonated. And because the messages are uniquely generated every time, signature-based filters cannot catch them. Research from the University of Waterloo found that voice biometric authentication can be bypassed in as few as six attempts using AI-generated voice clones. Only 0.1% of people can consistently identify a deepfake correctly.</p>
+      <div class="pull-quote">"Without an accurate, up-to-date model of exposures, defenders cannot match machine-speed intrusion cycles — and in 2026, that velocity gap becomes the defining risk."</div>
+      <h2>The AI Threat Landscape in 2026</h2>
+      <table class="threat-table">
+        <thead>
+          <tr>
+            <th>Threat Vector</th>
+            <th>AI Enhancement</th>
+            <th>Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Phishing & Spear Phishing</strong>
+            </td>
+            <td>Hyper-personalized, grammar-perfect, context-aware emails generated at scale</td>
+            <td class="sev-crit">Critical</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Deepfake Fraud</strong>
+            </td>
+            <td>Video/voice cloning of executives to authorize transfers or access</td>
+            <td class="sev-crit">Critical</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Autonomous Ransomware</strong>
+            </td>
+            <td>AI handles recon, vulnerability scanning, lateral movement without human oversight</td>
+            <td class="sev-high">High</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Prompt Injection</strong>
+            </td>
+            <td>Malicious content embedded in data sources manipulates AI tools from within</td>
+            <td class="sev-high">High</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Zero-Day Discovery</strong>
+            </td>
+            <td>AI-assisted reverse engineering finds vulnerabilities before patches exist</td>
+            <td class="sev-high">High</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Synthetic Identity Fraud</strong>
+            </td>
+            <td>Deepfake personas infiltrate organizations as employees or vendors</td>
+            <td class="sev-med">Medium</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>The Ransomware Evolution</h2>
+      <p>Ransomware attacks increased 8% year-over-year in 2025, making it the worst year on record according to Malwarebytes. But the more significant change was qualitative, not quantitative. Ransomware is evolving from a disruptive event into an automated pipeline. In 2025, the first confirmed AI-orchestrated attacks were documented — where AI agents handled reconnaissance, vulnerability scanning, and lateral movement without any human operator involved.</p>
+      <p>Malwarebytes predicts that 2026 will see <strong>fully autonomous ransomware pipelines</strong> that allow individual operators and small crews to attack multiple targets simultaneously at a scale that has never been seen in the ransomware ecosystem. The criminal barrier to entry is collapsing. You no longer need to be a sophisticated hacker to run a sophisticated attack. </p>
+      <div class="callout">
+        <span class="callout-label">The MCP Attack Surface</span>The Model Context Protocol (MCP) — the standard that lets AI agents connect to external tools — has created a new attack vector. A 2025 MIT study showed an AI model using MCP achieved domain dominance on a corporate network in under an hour with no human intervention, evading endpoint detection by adapting its tactics in real time. MCP-based attack frameworks are projected to be a defining threat in 2026.
+      </div>
+      <h2>How Organizations Are Responding</h2>
+      <p>The defensive response is also AI-powered, but it operates under a structural disadvantage. Attackers can tolerate errors — they can repeat attempts with little consequence. A defensive AI that misclassifies a genuine threat immediately exposes the organization. The asymmetry is fundamental and will not be designed away.</p>
+      <p>The most effective defensive strategies in 2026 center on three areas: <strong>identity hardening</strong> (zero-trust architectures, phishing-resistant MFA, out-of-band verification for high-value actions), <strong>AI-specific penetration testing</strong> (testing for prompt injection and LLM abuse before attackers do), and <strong>continuous exposure mapping</strong> (maintaining a real-time model of what is exposed and reachable from outside). Organizations that invest in forward-looking security strategies now will be best positioned as threats continue to accelerate. </p>
+      <div class="author-note">Sources: DeepStrike, Trend Micro, Malwarebytes, ISACA, Cybersecurity Dive — April 2026.</div>
+    </article>
+    <div class="footer-container">
+      <div class="social-icons">
+        <div class="icon">
+          <a href="https://www.instagram.com/_h.a.r.v.i.c_/" target="_blank" class="social-link">
+            <i class='fab fa-instagram'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.threads.net/@_h.a.r.v.i.c_" target="_blank" class="social-link">
+            <i class='fab fa-threads'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.facebook.com/harvic.john/" target="_blank" class="social-link">
+            <i class='fab fa-facebook'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.youtube.com/@harvicjohn" target="_blank" class="social-link">
+            <i class='fab fa-youtube'></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-quote">Remember! Coding is poetry written in pure logic.</div>
+      <div style="color:#fff;">©2026 TechHub - ALL RIGHTS RESERVED</div>
+    </div>
+    <div id="customAlert" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <p id="modalMessage">Service not available at the moment.</p>
+        <button onclick="closeModal()" class="modal-btn">OK</button>
+      </div>
+    </div>
+    <script>
+      function showAlert() {
+        document.getElementById('customAlert').style.display = 'flex';
+      }
+
+      function closeModal() {
+        document.getElementById('customAlert').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="theme-color" content="#050505">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="preload" as="image" href="images/TechHub_logo.png">
+    <title>Samsung DeX.</title>
+    <link rel="icon" type="image/png" href="images/favicon/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      body {
+        background-color: #050505;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+      }
+
+      article {
+        background-color: #050505;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #f8f9fa;
+        font-size: 25px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      h2 {
+        color: #FF7B00;
+        font-size: 1.8em;
+        margin-top: 40px;
+        padding-bottom: 10px;
+      }
+
+      p {
+        color: #f8f9fa;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+      }
+
+      .highlight {
+        background-color: #f1c40f;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-weight: bold;
+      }
+
+      blockquote {
+        font-size: 1.3em;
+        font-style: italic;
+        color: #555;
+        margin: 30px 0;
+        padding-left: 20px;
+        background-color: #050505;
+        padding: 15px 20px;
+      }
+
+      ul {
+        color: #f8f9fa;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      .author-note {
+        font-size: 0.9em;
+        color: #7f8c8d;
+        text-align: right;
+        margin-top: 50px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #FFFFFF !important;
+      }
+
+      .navbar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      .home-btn {
+        background-color: #2b2d31;
+        color: #FF7B00;
+        border: 2px solid #FF7B00;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .auth-link {
+        flex: 1;
+      }
+
+      .auth-btn {
+        background-color: #2b2d31;
+        color: #f8f9fa;
+        border: 2px solid #FF7B00;
+        padding: 8px 20px;
+        font-size: 14px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .auth-btn.user {
+        border-radius: 50px;
+      }
+
+      .user-icon {
+        color: #FF7B00;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease;
+        filter: brightness(1.2);
+      }
+
+      .logo-container {
+        font-size: 90px;
+        font-weight: bold;
+        letter-spacing: -5px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-tech {
+        color: #FFFFFF;
+      }
+
+      .logo-hub {
+        background-color: #FF7B00;
+        color: #050505;
+        margin-left: 5px;
+        padding: 2px 15px;
+        border-radius: 36px;
+      }
+
+      .search-section {
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar-container {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .search-input {
+        flex: 1;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 24px;
+        border: 2px solid #FF7B00;
+        background-color: #2b2d31;
+        color: white;
+        outline: none;
+      }
+
+      .search-btn {
+        background-color: #FF7B00;
+        color: #000000;
+        border: none;
+        padding: 0 25px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .tag-buttons-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 12px;
+      }
+
+      .tag-btn {
+        background-color: #2b2d31;
+        color: #f8f9fa;
+        border: 2px solid #FF7B00;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      .section-title {
+        font-size: 24px;
+        text-align: center;
+        padding: 7.5px;
+        display: flex;
+        justify-content: center;
+        border-left: 3px solid #FF7B00;
+        border-bottom: 3px solid #FF7B00;
+        margin-top: 30px;
+        border-radius: 24px;
+      }
+
+      .section-title strong {
+        color: #FFFFFF;
+      }
+
+      #noResults {
+        display: none;
+        color: #aaa;
+        margin-top: 50px;
+        font-size: 18px;
+        font-style: italic;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1750px;
+        margin-top: 50px;
+      }
+
+      .content-card {
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #1a1a1a;
+        border: 1px solid #333;
+      }
+
+      .content-card:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease;
+        filter: brightness(1.2);
+      }
+
+      .content-media {
+        width: 100%;
+        display: block;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .card-body {
+        padding: 15px;
+        color: white;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 16px;
+        color: #FF7B00;
+      }
+
+      .card-desc {
+        margin: 5px 0 0;
+        font-size: 13px;
+        color: #aaa;
+      }
+
+      .card-link {
+        color: #FF7B00;
+        text-decoration: underline;
+      }
+
+      .footer-container {
+        margin-top: 50px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 20px;
+        font-size: 24px;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .icon {
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        transition: 0.25s;
+        display: flex;
+        width: auto;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .icon:hover {
+        color: #FF7B00;
+        transform: translateY(-15px) scale(1.7);
+      }
+
+      .social-link {
+        color: #FF7B00;
+      }
+
+      .footer-quote {
+        border-bottom: 3px solid #FF7B00;
+        border-radius: 24px;
+        padding: 15px;
+        color: #ffffff;
+        max-width: 400px;
+        margin: 0 auto 40px;
+      }
+
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000b3;
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: #2b2d31;
+        border: 1px solid #FF7B00;
+        padding: 20px;
+        border-radius: 12px;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 10px 30px #00000080;
+        color: white;
+      }
+
+      .modal-header {
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        background: #707070;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 4px;
+      }
+
+      .modal-btn {
+        margin-top: 20px;
+        border: 2px solid #ff7B00;
+        background: #2b2d31;
+        padding: 8px 30px;
+        border-radius: 24px;
+        color: #f8f9fa;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .modal-btn:hover {
+        transform: scale(1.05);
+        transition: 0.3s ease;
+        filter: brightness(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="https://techhub.harvic005.workers.dev/">
+        <button class="home-btn">
+          <i class="fa-solid fa-house"></i>
+        </button>
+      </a>
+      <div class="auth-buttons">
+        <a href="About Me.html" target="_blank" class="auth-link">
+          <button class="auth-btn user">
+            <i class="fa-solid fa-user user-icon"></i>
+          </button>
+        </a>
+        <button class="auth-btn" onclick="showAlert()">Login</button>
+        <button class="auth-btn" onclick="showAlert()">Signup</button>
+      </div>
+    </div>
+    <div class="logo-container">
+      <span class="logo-tech">Tech</span>
+      <span class="logo-hub">Hub</span>
+    </div>
+    <div class="section-title">
+      <strong>Samsung Dex. PC in your pocket</strong>
+    </div>
+    <div id="noResults">No tech matches found. Try searching for "Game" or "Hardware"!</div>
+    <article>
+      <h1>Unleashing Your Phone's Potential: A Deep Dive into Samsung DeX</h1>
+      <p>For years, the tech industry has chased the dream of a single device that can do it all: a phone in your pocket that transforms into a full desktop workstation when you sit at your desk. While many have tried and abandoned this concept, Samsung has quietly refined it. Enter Samsung DeX (short for Desktop eXperience).</p>
+      <p>If you own a flagship Samsung Galaxy device, you are already carrying a surprisingly capable desktop computer. Here is everything you need to know about Samsung DeX, how it works, and why it might just change the way you interact with your mobile technology.</p>
+      <h2>What is Samsung DeX?</h2>
+      <p>At its core, Samsung DeX is a software platform built into premium Samsung Galaxy smartphones and tablets. <br> When connected to an external display—like a monitor or a smart TV—DeX bypasses the standard mobile interface and launches a full desktop environment. <br> You are greeted with a familiar layout: a desktop background, a taskbar at the bottom, a system tray for notifications, and the ability to open Android apps in resizable, overlapping windows. It allows you to use your phone precisely like a traditional PC, complete with keyboard and mouse support. </p>
+      <div class="content-card">
+        <img src="images/Samsung_Dex/1.jpeg" alt="OS" class="content-media"></img>
+      </div>
+      <h2>How to connect and use Samsung Dex.</h2>
+      <p>Getting started with DeX is incredibly straightforward, and you have a few options depending on your setup and hardware.</p>
+      <ul>
+        <li>Wired Connection to a Monitor: The most robust and responsive way to use DeX is via a direct wired connection. You can use a simple USB-C to HDMI cable, or a dedicated USB-C hub. A hub is highly recommended, as it allows you to charge your phone and plug in standard USB accessories simultaneously.</li>
+        <li>Wireless DeX: If you have a Miracast-compatible Smart TV or monitor, you can launch DeX completely wirelessly. Simply swipe down on your phone's quick settings panel, tap the DeX icon, and select your display.</li>
+        <li>DeX on PC (Legacy): Historically, Samsung offered a "DeX for PC" app that allowed you to run the DeX environment in a window on your Windows or Mac machine via a USB cable. However, with recent One UI updates (One UI 7 and higher), Samsung has largely phased out support for this method, focusing entirely on direct-to-monitor and wireless connections.</li>
+      </ul>
+      <div class="content-card">
+        <img src="images/Samsung_Dex/2.jpeg" alt="OS" class="content-media"></img>
+      </div>
+      <h2>Key features and productivity.</h2>
+      <p>Dex is not just a screen mirroring tool; it fundamentally changes how you interact with your mobile apps.</p>
+      <ul>
+        <li>Multi-Window Multitasking: Unlike standard Android, DeX lets you open multiple apps simultaneously. You can have a YouTube video playing in one corner, a Word document open in the center, and your email client snapped to the side.</li>
+        <li>Desktop-Class Browsing: When using web browsers like Samsung Internet or Google Chrome in DeX mode, websites automatically load their full desktop versions, eliminating the cramped mobile web experience.</li>
+        <li>Peripheral Support: You can seamlessly pair Bluetooth keyboards and mice to your phone, or plug wired versions into a USB-C hub.</li>
+        <li>Dual-Screen Functionality: While DeX is running on your external monitor, your phone screen remains fully functional. You can use it as a trackpad to control the desktop mouse, or continue using it as a standard phone to text or take calls without interrupting your workflow on the big screen.</li>
+      </ul>
+      <div class="content-card">
+        <img src="images/Samsung_Dex/3.jpeg" alt="OS" class="content-media"></img>
+      </div>
+      <h2>Supported Devices</h2>
+      <p>Samsung reserves DeX for its high-end Galaxy lineup. If you have a budget or mid-range device, you likely will not have access to this feature.</p>
+      <ul>
+        <li>
+          <b>Galaxy S Series: </b>From the older Galaxy S9 all the way up to the modern S24 and S26 series.
+        </li>
+        <li>
+          <b>Galaxy Z Fold Series: </b>All Z Fold models support DeX. (Note: The Z Flip series does not support DeX due to thermal and hardware constraints).
+        </li>
+        <li>
+          <b>Galaxy Note Series: </b>Note 9, Note 10, and Note 20 series.
+        </li>
+        <li>Galaxy A series: Samsung hasn't forgotten there mid to high tier budget series, like the A56 5G, A36 5G, A55 5G, A05, A06, A07, A14 to A17 series.</li>
+        <li>Galaxy Tab S Series: Premium tablets like the Tab S7, S8, S9, and newer models feature DeX. On these tablets, DeX can even run directly on the device's own screen without needing an external monitor.</li>
+        <li>Galaxy Tab A Series: Budget tablets like the Tab A9+ and Tab A11+ coemes in with Samsung DeX and works right out of the box without even needing an external monitor due to its big enough screen size, pair that up with a keyboard cover you've got yourself a custom mini Macbook with you for far productive scenarios.</li>
+      </ul>
+      <div class="content-card">
+        <img src="images/Samsung_Dex/4.jpeg" alt="OS" class="content-media"></img>
+      </div>
+      <h2>DeX Today: </h2>
+      <p>More Than Just Office Work As mobile processors have grown exponentially more powerful—boasting RAM and CPU specs that rival many standard laptops—the use cases for DeX have expanded.</p>
+      <p>Today, DeX is a favorite not just for document editing and web browsing, but for more intensive tasks. With applications like Termux, developers can run full Linux environments directly on their Galaxy phones, using DeX as a legitimate, lightweight coding station. For frequent travelers, digital nomads, and students, a flagship phone paired with a portable monitor and a foldable keyboard completely eliminates the need to carry a heavy laptop.</p>
+      <div class="content-card">
+        <img src="images/Samsung_Dex/5.jpeg" alt="OS" class="content-media"></img>
+      </div>
+      <h2>The bottom line.</h2>
+      <p>Samsung DeX remains one of the most underrated features in the mobile tech world. While it may not replace a high-end desktop for heavy video editing or PC gaming, it is more than capable of handling the vast majority of everyday computing tasks. If you have a compatible Galaxy device sitting in your pocket, you owe it to yourself to plug it in and see what it can do.</p>
+    </article>
+    <div class="footer-container">
+      <div class="social-icons">
+        <div class="icon">
+          <a href="https://www.instagram.com/_h.a.r.v.i.c_/" target="_blank" class="social-link">
+            <i class='fab fa-instagram'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.threads.net/@_h.a.r.v.i.c_" target="_blank" class="social-link">
+            <i class='fab fa-threads'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.facebook.com/harvic.john/" target="_blank" class="social-link">
+            <i class='fab fa-facebook'></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.youtube.com/@harvicjohn" target="_blank" class="social-link">
+            <i class='fab fa-youtube'></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-quote"> Remember! Coding is poetry written in pure logic. </div>
+    </div>
+    <div id="customAlert" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <p id="modalMessage">Service not available at the moment.</p>
+        <button onclick="closeModal()" class="modal-btn">OK</button>
+      </div>
+    </div>
+    <script>
+      function showAlert() {
+        document.getElementById('customAlert').style.display = 'flex';
+      }
+
+      function closeModal() {
+        document.getElementById('customAlert').style.display = 'none';
+      }
+
+      function filterContent() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const cards = document.getElementsByClassName('content-card');
+        const noResults = document.getElementById('noResults');
+        let visibleCount = 0;
+        for (let i = 0; i < cards.length; i++) {
+          const title = cards[i].getElementsByTagName("h3")[0];
+          const description = cards[i].getElementsByTagName("p")[0];
+          const textValue = (title ? title.textContent : "") + " " + (description ? description.textContent : "");
+          if (textValue.toLowerCase().indexOf(filter) > -1) {
+            cards[i].style.display = "";
+            visibleCount++;
+          } else {
+            cards[i].style.display = "none";
+          }
+        }
+        // Show "No Results" message if everything is hidden
+        noResults.style.display = (visibleCount === 0) ? "block" : "none";
+      }
+    </script>
+  </body>
+</html>
