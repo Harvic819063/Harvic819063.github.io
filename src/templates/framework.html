@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><style>body{background:#050505;margin:0;display:flex;flex-direction:column;align-items:center;min-height:100vh;font-family:'Arial',sans-serif;padding:20px;}
+    article{background:#050505;max-width:900px;width:100%;padding:40px;color:#f8f9fa;}
+    h1{color:#f8f9fa;font-size:45px;margin-bottom:10px;line-height:1.2;}
+    .article-meta{display:flex;align-items:center;gap:15px;margin:20px 0 30px;font-size:14px;color:#FF7B00;letter-spacing:1px;border-bottom:1px solid #333;padding-bottom:20px;flex-wrap:wrap;}
+    .article-avatar{width:40px;height:40px;background:linear-gradient(135deg,#FF7B00,#FF5500);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#050505;font-weight:bold;font-size:16px;flex-shrink:0;}
+    h2{color:#FF7B00;font-size:1.8em;margin-top:40px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #FF7B00;letter-spacing:1px;}
+    p{color:#f8f9fa;font-size:1.1em;margin-bottom:20px;line-height:1.8;text-align:justify;}
+    .pull-quote{font-size:1.3em;font-style:italic;color:#FFB84D;margin:30px 0;padding:20px;border-left:4px solid #FF7B00;background:#1a1a1a;border-radius:4px;}
+    em{color:#FF7B00;font-style:italic;} strong{color:#FFB84D;font-weight:bold;}
+    a{text-decoration:none;color:#FF7B00;} a:hover{color:#FFB84D!important;}
+    .author-note{font-size:.9em;color:#7f8c8d;text-align:center;margin-top:50px;border-top:1px solid #333;padding-top:20px;}
+    .navbar{width:100%;display:flex;justify-content:space-between;align-items:center;margin-bottom:50px;max-width:1400px;}
+    .home-btn{background:#2b2d31;color:#FF7B00;border:2px solid #FF7B00;padding:10px;font-size:20px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;width:45px;height:45px;}
+    .auth-buttons{display:flex;gap:10px;} .auth-link{flex:1;}
+    .auth-btn{background:#2b2d31;color:#f8f9fa;border:2px solid #FF7B00;padding:8px 20px;font-size:14px;border-radius:24px;cursor:pointer;}
+    .auth-btn.user{border-radius:50px;} .user-icon{color:#FF7B00;}
+    button:hover{transform:scale(1.05);transition:.3s ease;filter:brightness(1.2);}
+    .logo-container{font-size:90px;font-weight:bold;letter-spacing:-5px;margin-bottom:30px;cursor:pointer;display:flex;align-items:center;}
+    .logo-tech{color:#FFFFFF;} .logo-hub{background:#FF7B00;color:#050505;margin-left:5px;padding:2px 15px;border-radius:36px;}
+    .section-title{font-size:24px;text-align:center;padding:7.5px;display:flex;justify-content:center;border-left:3px solid #FF7B00;border-bottom:3px solid #FF7B00;margin-bottom:30px;border-radius:24px;}
+    .section-title strong{color:#FFFFFF;}
+    .stat-row{display:flex;gap:16px;margin:30px 0;flex-wrap:wrap;}
+    .stat-box{flex:1;min-width:130px;background:#111;border:1px solid #2a2a2a;border-top:3px solid #FF7B00;padding:16px;text-align:center;}
+    .stat-box .num{font-size:2rem;font-weight:bold;color:#FF7B00;line-height:1;margin-bottom:6px;}
+    .stat-box .desc{font-size:.72rem;color:#666;letter-spacing:.08em;text-transform:uppercase;line-height:1.4;}
+    .callout{background:#0f0f0f;border:1px solid #333;border-left:4px solid #FF7B00;border-radius:4px;padding:18px 22px;margin:28px 0;color:#aaa;font-size:.95em;line-height:1.7;}
+    .callout .callout-label{display:block;font-size:.7em;letter-spacing:.25em;text-transform:uppercase;color:#FF7B00;margin-bottom:8px;font-weight:bold;}
+    .score-row{display:flex;gap:10px;margin:20px 0;flex-wrap:wrap;}
+    .score-box{flex:1;min-width:100px;background:#111;border:1px solid #2a2a2a;padding:12px;text-align:center;}
+    .score-box .s{font-size:1.8rem;font-weight:bold;color:#FF7B00;line-height:1;}
+    .score-box .l{font-size:.65rem;color:#555;text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
+    .verdict{background:#111;border:2px solid #FF7B00;padding:20px 24px;margin:28px 0;}
+    .verdict .v-label{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:#FF7B00;margin-bottom:8px;display:block;}
+    .verdict p{color:#f8f9fa;font-size:1rem;margin:0;}
+    .compare-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.88rem;}
+    .compare-table th{background:#1a1a1a;color:#FF7B00;padding:10px 14px;text-align:left;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;border-bottom:2px solid #FF7B00;}
+    .compare-table td{padding:10px 14px;border-bottom:1px solid #222;color:#aaa;vertical-align:top;}
+    .compare-table tr:hover td{background:#0f0f0f;}
+    .yes{color:#4caf7d;font-weight:bold;} .no{color:#d13f2a;font-weight:bold;} .ok{color:#c98b24;font-weight:bold;}
+    .pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+    .pros,.cons{background:#111;border:1px solid #2a2a2a;padding:16px;}
+    .pros h4{color:#4caf7d;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;}
+    .cons h4{color:#d13f2a;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;}
+    .pros ul,.cons ul{list-style:none;padding:0;margin:0;}
+    .pros li,.cons li{font-size:.85rem;color:#888;padding:5px 0;border-bottom:1px solid #1a1a1a;line-height:1.5;}
+    .pros li:last-child,.cons li:last-child{border:none;}
+    .pros li::before{content:'+ ';color:#4caf7d;}
+    .cons li::before{content:'- ';color:#d13f2a;}
+    .footer-container{margin-top:80px;text-align:center;width:100%;padding:40px 0;}
+    .social-icons{display:flex;gap:20px;font-size:24px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+    .icon{font-size:30px;color:white;cursor:pointer;transition:.25s;display:flex;justify-content:center;align-items:center;}
+    .icon:hover{color:#FF7B00;transform:translateY(-15px) scale(1.7);}
+    .social-link{color:#FF7B00;}
+    .footer-quote{border-bottom:3px solid #FF7B00;border-radius:24px;padding:15px;color:#fff;max-width:400px;margin:0 auto 40px;}
+    .modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000000b3;backdrop-filter:blur(4px);z-index:1000;justify-content:center;align-items:center;}
+    .modal-content{background:#2b2d31;border:1px solid #FF7B00;padding:20px;border-radius:12px;width:320px;text-align:center;box-shadow:0 10px 30px #00000080;color:white;}
+    .modal-header{text-align:left;margin-bottom:15px;}
+    .dot{height:8px;width:8px;background:#707070;border-radius:50%;display:inline-block;margin-right:4px;}
+    .modal-btn{margin-top:20px;border:2px solid #ff7B00;background:#2b2d31;padding:8px 30px;border-radius:24px;color:#f8f9fa;cursor:pointer;}
+    .modal-btn:hover{transform:scale(1.05);filter:brightness(1.2);}
+    @media(max-width:768px){.navbar{margin-bottom:30px;}.logo-container{font-size:60px;margin-bottom:20px;}article{padding:20px;}h1{font-size:32px;}h2{font-size:1.4em;}p{font-size:1em;}.stat-row{flex-direction:column;}.pros-cons{grid-template-columns:1fr;}}</style><title>Framework Laptop Review 2026 - TechHub</title></head><body>
+    <div class="navbar"><a href="https://harvic819063.github.io"><button class="home-btn"><i class="fa-solid fa-house"></i></button></a><div class="auth-buttons"><a href="About Me.html" target="_blank" class="auth-link"><button class="auth-btn user"><i class="fa-solid fa-user user-icon"></i></button></a><button class="auth-btn" onclick="showAlert()">Login</button><button class="auth-btn" onclick="showAlert()">Signup</button></div></div><div class="logo-container"><span class="logo-tech">Tech</span><span class="logo-hub">Hub</span></div>
+    <div class="section-title"><strong>Framework Laptop — The Future of Repairability.</strong></div>
+    <article>
+    <h1>Framework Laptop 2026 — <span style="color:#FF7B00;">Build It. Fix It. Own It.</span></h1>
+    <div class="article-meta"><div class="article-avatar">H</div><span>HARVICJOHN</span><span>—</span><span>9 MIN READ</span><span>—</span><span>MAY 15, 2026</span></div>
+    <p>Framework exists to challenge a premise that the laptop industry spent twenty years making feel inevitable: that consumer laptops must be sealed, irreparable, and obsolete on the manufacturer's schedule. The Framework Laptop 13 and 16 are a counter-argument to every glued chassis and soldered RAM slot the industry has shipped in the past decade. And in 2026, with memory prices surging and repair costs climbing everywhere, that counter-argument has never felt more timely.</p>
+    <p>PCMag calls the Framework Laptop 16 "the most versatile and future-proof desktop-replacement laptop" available. PCWorld names the Framework 13 its pick for the best repairable laptop. The Framework CEO, meanwhile, has issued a stark warning: rising RAM and SSD prices through 2026 are making repairability not just a philosophical preference but a financial necessity.</p>
+    <div class="stat-row">
+    <div class="stat-box"><div class="num">100%</div><div class="desc">User-replaceable: RAM, SSD, battery, keyboard, ports</div></div>
+    <div class="stat-box"><div class="num">AMD</div><div class="desc">Ryzen AI 300 series (Framework 13)</div></div>
+    <div class="stat-box"><div class="num">Modular</div><div class="desc">Port selection via swappable expansion cards</div></div>
+    <div class="stat-box"><div class="num">10yr</div><div class="desc">Framework's target product support lifespan</div></div>
+    </div>
+    <h2>What You Can Actually Replace</h2>
+    <p>The Framework Laptop is not modular in a theoretical sense — it is modular in a <em>practical</em> sense. Users can replace the RAM with standard DDR5 modules. The SSD is a standard NVMe M.2 slot. The battery is secured with screws, not glue. The keyboard pulls out without specialized tools. Even the <strong>mainboard</strong> — containing the motherboard, processor, and fans — can be swapped out entirely when a new processor generation releases, turning a 2024 Framework into a 2026-spec machine for the cost of a mainboard upgrade rather than an entirely new laptop.</p>
+    <p>The expansion card system addresses the port problem that plagues thin laptops. Choose from USB-C, USB-A, HDMI, DisplayPort, MicroSD, ethernet, and storage expansion cards. Drop them into the four slots and reconfigure as your needs change. Traveling and need USB-A for a hotel alarm clock? Swap a card before you leave.</p>
+    <div class="pull-quote">"Personal computing as we know it is dead — unless we build hardware that lasts. The RAM crisis makes that argument louder than it has ever been." — Framework CEO</div>
+    <h2>The Repairability Argument in 2026</h2>
+    <p>The timing of Framework's rise is not accidental. The global RAM shortage has sent memory prices up 50–300% depending on the tier. A sealed laptop with soldered RAM that degrades or fails is now substantially more expensive to deal with — either through repair (if even possible) or replacement. Framework users can buy a RAM upgrade kit and install it themselves in ten minutes. In a market where 16GB RAM kits have gone from 0 to 40+, the ability to choose when and how much to spend on memory upgrades is genuinely valuable.</p>
+    <p>The right-to-repair movement has also gained legislative traction, with several states passing repair-friendly laws in 2025. Framework was ahead of this wave — not as a compliance strategy, but as a founding philosophy. The brand has built a community of users who treat their laptops as long-term investments rather than disposable devices.</p>
+    <h2>The Performance Reality Check</h2>
+    <p>Framework is not for everyone. The AMD Ryzen AI 300-powered Framework 13 handles everyday productivity, development work, and light creative tasks well. It is not a gaming laptop — integrated graphics are the only option, and they handle indie games and light titles at modest settings. Battery life is decent but not class-leading. The chassis, while logically designed, is thicker and heavier than premium ultrabooks with equivalent components.</p>
+    <div class="pros-cons">
+    <div class="pros"><h4>Why Choose Framework</h4><ul><li>Every component is user-replaceable</li><li>Mainboard upgrade path for future CPUs</li><li>Modular expansion card port system</li><li>Strong repairability community and documentation</li><li>Right-to-repair values backed by actual hardware design</li></ul></div>
+    <div class="cons"><h4>The Trade-offs</h4><ul><li>No discrete GPU option on Framework 13</li><li>Thicker than premium thin-and-lights</li><li>Battery life competitive but not best-in-class</li><li>Higher upfront cost than sealed competitors at equivalent specs</li></ul></div>
+    </div>
+    <div class="callout"><span class="callout-label">Who Should Buy a Framework</span>Developers, engineers, and power users who want control over their hardware. Anyone who expects to own their laptop for 5+ years and wants to upgrade components as needs evolve. Users ideologically opposed to planned obsolescence. People who have been burned by soldered RAM failures on sealed laptops.</div>
+    <div class="author-note">Sources: PCMag, PCWorld, SlashGear, Tom's Hardware — April 2026.</div>
+    </article>
+    <div class="footer-container"><div class="social-icons"><div class="icon"><a href="https://www.instagram.com/_j.a.r.v.y_/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a></div><div class="icon"><a href="https://www.threads.net/@_j.a.r.v.y_" target="_blank" class="social-link"><i class="fab fa-threads"></i></a></div><div class="icon"><a href="https://www.facebook.com/harvic.john/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a></div><div class="icon"><a href="https://www.youtube.com/@harvicjohn" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a></div></div><div class="footer-quote">Remember! Coding is poetry written in pure logic.</div><div style="color:#fff;">©2026 TechHub - ALL RIGHTS RESERVED</div></div><div id="customAlert" class="modal-overlay"><div class="modal-content"><div class="modal-header"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><p id="modalMessage">Service not available at the moment.</p><button onclick="closeModal()" class="modal-btn">OK</button></div></div><script>function showAlert(){document.getElementById("customAlert").style.display="flex";}function closeModal(){document.getElementById("customAlert").style.display="none";}</script></body></html>
+    
